@@ -1,0 +1,40 @@
+/*PERSONALIZADO*/
+.btn{
+	border:none;
+	padding: 5px;
+	border-radius: 2px;
+	margin-top: 5px;
+}
+.btn::hover{
+	cursor:pointer;
+}
+input[type="text"], input[type="password"]{
+	padding: 3px;
+}
+.btn-sucesso{
+	background:#2ecc71;
+	color:white;
+}
+.btn-perigo{
+	background:#e74c3c;
+	color:white;
+}
+.btn-atencao{
+	background:#f1c40f;
+	color:white;
+}
+.btn-right{
+	float:right;
+}
+.btn-left{
+	float:left;
+}
+.btn-big{
+	padding: 10px;
+}
+.form-controlado{
+	width: 100%;
+}
+.table-full{
+	width: 100%;
+}
