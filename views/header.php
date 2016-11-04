@@ -11,10 +11,10 @@
 					<ul>
 						<li><a class="muda" href="revendedor_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Revendedor </a></li>
 						<li><a class="muda" href="acqualokos_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Acqua Lokos </a></li>
+						<li><a href="admin_login.php"><i class="fa fa-address-card-o" aria-hidden="true"></i><small>Admin Mode</small></a></li>
 					</ul>
 			</li>
 			<li><a href="acesso_global.php"> <i class="fa fa-filter" aria-hidden="true"></i>Filtragem Global </a></li>
-			<li><a href=""><i class="fa fa-address-card-o" aria-hidden="true"></i><small>Admin Mode</small></a></li>
 			<div class="clear"></div>
 		</ul>
 	</div>

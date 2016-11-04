@@ -18,6 +18,15 @@ h1{
 .texto-centralizado{
 	text-align: center;
 }
+/*Avisos*/
+.aviso{
+	padding: 5px;
+	text-align: center;
+	background: #e74c3c;
+	border-radius: 3px;
+	color:white;
+}
+/*Fim Avisos*/
 /*Header*/
 header{
 	width: 100%;
