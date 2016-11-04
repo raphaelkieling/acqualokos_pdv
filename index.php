@@ -29,7 +29,7 @@
 			</tr>
 			<tr>
 				<td>Data</td>
-				<td><input type="date" required></td>
+				<td><input type="date" required placeholder="dd/mm/aaaa"></td>
 			</tr>
 		</table><br><br>
 		<h1>Funcionários</h1>
