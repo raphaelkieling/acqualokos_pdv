@@ -1,5 +1,7 @@
 <?php
-	$conexao = mysqli_connect("localhost","root","","acqualokos_revendedor");
+
+ 	//LOGIN  do sistema, dou o md5 e depois comparo com a função logar se alguma daquelas senha são md5;
+	include("sistema/conexao.php");
 	if(isset($_POST['admin_senha'])){ //3
 		$admin         = md5($_POST['admin_senha']);
 		if(logar($conexao,$admin,3)){
