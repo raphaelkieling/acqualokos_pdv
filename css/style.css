@@ -15,6 +15,9 @@ h1{
 .clear{
 	clear: both;
 }
+.texto-centralizado{
+	text-align: center;
+}
 /*Header*/
 header{
 	width: 100%;
@@ -39,12 +42,11 @@ header img{
 }
 /*Final header*/
 /*Menu*/
-
 nav{
 	background: #3498db;
 	width: 100%;
+	text-align: center;
 }
-
 nav ul li{
 	display: inline-block;
 	list-style: none;
@@ -55,6 +57,25 @@ nav a{
 	color:white;
 }
 
+nav ul li ul{
+	display: none;
+}
+nav ul li:hover > ul{
+	display: block;
+	position: absolute;
+}
+nav ul li ul li{
+	background: #3498db;
+	display: block;
+	padding-top:10px;
+	border-top: solid 1px white;
+	position: relative;
+	top:10px;
+	z-index: 1;
+}
+nav ul li i,nav ul li ul li i{
+	padding-right: 2px;
+}
 /*Final menu*/
 .main{
 	margin-top: 20px;
@@ -71,9 +92,11 @@ table{
 table td{
 	font-size: 18px;
 }
-
 table input,table select{
 	width: 100%;
+}
+.table-hover td:hover{
+	cursor:text;
 }
 /*Final tabela*/
 /*Login revendedor*/
@@ -93,27 +116,3 @@ table input,table select{
 	margin-bottom: 10px;
 }
 /*Saida revendedor*/
-#search{
-	width: 100%;
-	padding: 10px
-}
-#search input[type="text"]{
-	width: 100%;
-	border:none;
-	border: solid 1px #3498db;
-	border-radius: 4px;
-	padding: 5px;
-}
-#search input[type="text"]:focus{
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-#erro{
-	width: 100%;
-	padding: 5px;
-}
-footer{
-	margin-top:20px;
-	padding: 10px;
-	background: #1B191C;
-	color:white;
-}

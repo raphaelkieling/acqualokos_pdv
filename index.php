@@ -117,6 +117,5 @@
 		<div class="clear"></div>
 		</form>
 	</div>
-	<script src="js/jquery-3.1.1.js"></script>
 </body>
 </html>

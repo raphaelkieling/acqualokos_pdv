@@ -6,10 +6,28 @@
 <nav>
 	<div class="container">
 		<ul>
-			<li><a href="index.php"> Ponto de Venda Lista </a></li>
-			<li><a href="revendedor_login.php"> Acesso Revendedor </a></li>
-			<li><a href="acqualokos_login.php"> Acesso Acqua Lokos </a></li>
-			<li><a href="acesso_global.php"> Filtragem Global </a></li>
+			<li><a href="index.php"> <i class="fa fa-list" aria-hidden="true"></i>Ponto de Venda Lista </a></li>
+			<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Acessos</a>
+					<ul>
+						<li><a class="muda" href="revendedor_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Revendedor </a></li>
+						<li><a class="muda" href="acqualokos_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Acqua Lokos </a></li>
+					</ul>
+			</li>
+			<li><a href="acesso_global.php"> <i class="fa fa-filter" aria-hidden="true"></i>Filtragem Global </a></li>
+			<li><a href=""><i class="fa fa-address-card-o" aria-hidden="true"></i><small>Admin Mode</small></a></li>
+			<div class="clear"></div>
 		</ul>
 	</div>
 </nav>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$('.muda').hover(
+			function(){
+				$(this).find('i').removeClass('fa-lock ').addClass(' fa-unlock-alt ');
+			},
+			function(){
+				$(this).find('i').removeClass('fa-unlock-alt ').addClass(' fa-lock ');
+			}
+		);
+	</script>
