@@ -23,13 +23,10 @@
 				<td>Revendedor:</td>
 				<td>
 					<select id="" required name="revendedor">
-						<option value="Revendedo 1">Revendedor 1</option>
+						<option value="0">Revendedor 0</option>
+						<option value="1">Revendedor 1</option>
 					</select>
 				</td>
-			</tr>
-			<tr>
-				<td>Data</td>
-				<td><input type="date" required placeholder="dd/mm/aaaa" name="data"></td>
 			</tr>
 		</table><br><br>
 		<h1>Funcionários</h1>

@@ -3,6 +3,7 @@
 	<!-- Header -->
 	<?php include('views/header.php') ?>
 	<div class="container main">
+		<?php include("views/erro.php")?>
 		<div class="login-acesso">
 			<img src="img/logo-acqua-lokos.png" alt="">	
 			<form action="controller-login.php" method="post">

@@ -107,6 +107,11 @@ table input,table select{
 .table-hover td:hover{
 	cursor:text;
 }
+.table-blue th{
+	background: #3498db;
+	color:white;
+	padding: 5px;
+}
 /*Final tabela*/
 /*Login revendedor*/
 .login-acesso{

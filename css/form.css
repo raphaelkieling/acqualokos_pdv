@@ -35,7 +35,10 @@ input[type="text"], input[type="password"],select,input[type="date"]{
 	float:left;
 }
 .btn-big{
-	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .form-controlado{
 	width: 100%;

@@ -8,4 +8,4 @@
 	<meta charset="UTF-8">
 	<title>Revendedores</title>
 </head>
-
+<?php  include("sistema/conexao.php"); ?>

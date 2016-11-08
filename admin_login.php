@@ -3,9 +3,7 @@
 	<!-- Header -->
 	<?php include('views/header.php') ?>
 	<div class="container main">
-		<div class="aviso form-controlado">
-			Um aviso muito legal
-		</div>
+		<?php include("views/erro.php")?>
 		<div class="login-acesso">
 			<img src="img/logo-admin.png" alt="">
 			<form action="controller-login.php" method="post">

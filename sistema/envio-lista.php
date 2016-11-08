@@ -10,12 +10,12 @@
 	$responsavel= $_POST['responsavel'];
 	$revendedor = $_POST['revendedor'];
 		
-	$data            = $_POST['data'];
+	$data            = date('d/m/Y');
 
 	
 	for ($i = 0; $i <= 14; $i++) {
 		if($funcionarios[$i]!=""){
-			mysqli_query($conexao,"insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) values ('$funcionarios[$i]','$documentos[$i]','$pontoVenda','$localidade','$responsavel','$revendedor',$data)");
+			mysqli_query($conexao,"insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) values ('$funcionarios[$i]','$documentos[$i]','$pontoVenda','$localidade','$responsavel','$revendedor','$data')");
 		}
 	}
 ?>
