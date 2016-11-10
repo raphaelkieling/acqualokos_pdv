@@ -5,7 +5,7 @@
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<div class="login-acesso">
-			<img src="img/logo-revendedor.png" >	
+			<img src="img/logo-acqua.png" >
 			<form action="controller-login.php" method="post">
 				<select name="revendedor_nome" class="form-controlado">
 					<option value="0"> Revendedor 0 </option>

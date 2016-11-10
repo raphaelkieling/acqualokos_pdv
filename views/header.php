@@ -6,7 +6,7 @@
 <nav>
 	<div class="container">
 		<ul>
-			<li><a href="index.php"> <i class="fa fa-list" aria-hidden="true"></i>Ponto de Venda Lista </a></li>
+			<li><a href="criar-lista.php"> <i class="fa fa-list" aria-hidden="true"></i>Ponto de Venda Lista </a></li>
 			<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Acessos</a>
 					<ul>
 						<li><a class="muda" href="revendedor_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Revendedor </a></li>

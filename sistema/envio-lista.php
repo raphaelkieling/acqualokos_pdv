@@ -15,8 +15,8 @@
 	
 	for ($i = 0; $i <= 14; $i++) {
 		if($funcionarios[$i]!=""){
-			mysqli_query($conexao,"insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) values ('$funcionarios[$i]','$documentos[$i]','$pontoVenda','$localidade','$responsavel','$revendedor','$data')");
+			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$i);
 		}
 	}
+	header("location:../criar-lista.php?erro-sucesso");
 ?>
-<h1>certo</h1>

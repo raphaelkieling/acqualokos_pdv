@@ -7,3 +7,14 @@
 <?php
 	}
 ?>
+
+
+<?php
+	if(isset($_GET['erro-sucesso'])){
+?>
+		<div class="aviso-sucesso form-controlado">
+			Tudo ocorreu como esperado!
+		</div>
+<?php
+	}
+?>
