@@ -28,7 +28,6 @@
 		$acqualokos =md5( $_POST['acqua_senha']);
 		if(logar($conexao,$acqualokos,2)){
 			header("location:acqualokos_login_acess.php");
-
 			$_SESSION['acesso'] = $acqualokos;
 		}else{
 			header("location:acqualokos_login.php?erro");

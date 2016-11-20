@@ -38,80 +38,12 @@
 				<td>Nome:</td>
 				<td>Documento:</td>
 			</tr>
+			<?php for($i=0; $i < 15 ; $i++) { ?>
 			<tr>
 				<td><input name="n[]" type="text" placeholder="Nome do Funcionário"></td>
 				<td><input name="d[]" type="text" placeholder="CPF ou RG"></td>
 			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d10" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
-
-			<tr>
-				<td><input name="n[]" type="text"></td>
-				<td><input name="d[]" type="text"></td>
-			</tr>
+			<?php } ?>
 		</table>
 		<button class="btn btn-sucesso btn-right btn-big form-controlado" type="submit">Validar Conteudo</button>
 		<div class="clear"></div>

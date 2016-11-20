@@ -1,9 +1,9 @@
-	<?php include('views/head.php') ?>
+<?php include('views/head.php') ?>
 <body>
 	<!-- Header -->
 	<div class="container main">
-		<?php include("views/erro.php")?>
-		<h1><center>Trabalha com nós? Loge-se</center></h1>
+		<?php include("views/erro.php");?>
+		<h1><center>Trabalha conosco? Loge-se</center></h1>
 		<div class="login-acesso">
 			<img src="img/logo-acqua-lokos.png" alt="">
 			<form action="controller-login.php" method="post">

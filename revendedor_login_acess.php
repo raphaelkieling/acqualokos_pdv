@@ -27,9 +27,10 @@
 				<th>Revendedor:</th>
 				<th>Data:</th>
 			</tr>
+	
 			<?php
-			$select = BuscaLista($conexao,$id_revendedor);
-			while($dados = mysqli_fetch_assoc($select)){
+				$select = BuscaLista($conexao,$id_revendedor);
+				while($dados = mysqli_fetch_assoc($select)){
 			?>
 			<tr>
 				<td><small><input type="text" name="id[]" value="<?= $dados['id']?>" hidden><?= $dados['id']?></small></td>
@@ -43,8 +44,7 @@
 			</tr>
 			<?php } ?>
 		</table>
-
-		<button type="submit" class="btn btn-sucesso btn-big ">Aceitar Lista</button>
+		<button type="submit" class="btn btn-sucesso btn-big form-controlado">Aceitar Lista</button>
 		</form>
 	</div>
 </body>
