@@ -1,4 +1,9 @@
-<?php include('views/head.php') ?>
+<?php 
+session_start();
+unset($_SESSION['acesso']);
+unset($_SESSION['acesso-total']);
+include('views/head.php') 
+?>
 <body>
 	<!-- Header -->
 	<div class="container main">

@@ -14,9 +14,9 @@
 
 	
 	for ($i = 0; $i <= 14; $i++) {
-		if($funcionarios[$i]!=""){
+		if($funcionarios[$i]!="" || empty($funcionarios)){
+			$id_lista = PegarIdUltimo($conexao); 
 			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$i);
 		}
 	}
-	header("location:../criar-lista.php?erro-sucesso");
 ?>

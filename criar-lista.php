@@ -1,9 +1,12 @@
 
 <?php
-	include('views/head.php') ?>
+	// Evita que alguma pessoa entre no site;
+	include('sistema/verificar_login.php');
+	include('views/head.php'); 
+?>
 <body>
 	<!-- Header -->
-	<?php include('views/header.php') ?>
+	<?php include('views/header.php'); ?>
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<br><br>

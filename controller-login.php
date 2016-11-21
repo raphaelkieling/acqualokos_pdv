@@ -1,13 +1,14 @@
 <?php
-	session_start();
+	include("sistema/verificar_login.php");
  	//LOGIN  do sistema, dou o md5 e depois comparo com a função logar se alguma daquelas senha são md5;
+
 	include("sistema/conexao.php");
 
 	if(isset($_POST['senha_total'])){//0 Geral para as pessoas
 		$senha = md5($_POST['senha_total']);
 		if(logar($conexao,$senha,2)){
+			$_SESSION['acesso-total'] = "logado";
 			header("location:criar-lista.php");
-			$_SESSION['acesso_total'] = $acqualokos;
 		}else{
 			header("location:index.php?erro");
 		}
@@ -28,7 +29,7 @@
 		$acqualokos =md5( $_POST['acqua_senha']);
 		if(logar($conexao,$acqualokos,2)){
 			header("location:acqualokos_login_acess.php");
-			$_SESSION['acesso'] = $acqualokos;
+			$_SESSION['acesso'] = 2;
 		}else{
 			header("location:acqualokos_login.php?erro");
 		}
@@ -38,7 +39,7 @@
 		$admin         = md5($_POST['admin_senha']);
 		if(logar($conexao,$admin,3)){
 			header("location:admin_login_acess.php");
-			$_SESSION['acesso'] = $admin;
+			$_SESSION['acesso'] = 3;
 		}else{
 			header("location:admin_login.php?erro");
 		}

@@ -1,8 +1,7 @@
 <?php
-
+	//configuração geral
+	include("database.php");
 	date_default_timezone_set('America/Sao_Paulo');
-	$conexao = mysqli_connect("localhost","root","","acqualokos_revendedor");
-
 //LOGAR no site
 function logar($conexao,$senha,$tipo){ // Loga qualquer menos o revendedor pois o revendedor precisa de ID diferente
 	$select         = mysqli_query($conexao,"select * from banco_senhas where  senha='$senha' and tipo_entrada=$tipo");
@@ -17,7 +16,7 @@ function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 	if(mysqli_fetch_row($select)>0){
 		return true;
 	}else{
-		echo $revendedor."---".$senha."---".$tipo;
+		return false;
 	}
 }
 function pegarRevendedor($conexao,$senha){
@@ -64,13 +63,13 @@ function BuscaListaGlobal($conexao){
 	return mysqli_query($conexao,"select * from banco_global order by id");
 }
 // fim GLOBAL
-function InserirLista($conexao,$id){
-	mysqli_query($conexao,"insert into banco_id_listas(lista) values('$id')");
+function InserirLista($conexao){
+	mysqli_query($conexao,"insert into banco_id_listas(lista) values('usado')");
 }
 function PegarIdUltimo($conexao){
-	$select = mysqli_query($conexao,"SELECT MAX(id) FROM banco_acqualokos");
+	$select = mysqli_query($conexao,"SELECT MAX(id) FROM banco_id_listas");
 	while($final = mysqli_fetch_assoc($select)){
-		return $final['id'];
+		return $final['MAX(id)']+1;
 	}
 }
 ?>

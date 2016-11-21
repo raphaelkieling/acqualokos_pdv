@@ -1,13 +1,10 @@
-	<?php
-	session_start();
-	if(isset($_SESSION['acesso'])){
-		$id_revendedor = $_SESSION['acesso'];
-		include('views/head.php');
-	}else{
-		session_destroy();
-		header("location:index.php");
-	}
-	?>
+<?php
+	// Evita que alguma pessoa entre no site;
+	include('sistema/verificar_login.php');
+	include('sistema/verificar_login_revendedor.php');
+	include('views/head.php'); 
+	$id_revendedor = $_SESSION['acesso'];
+?>
 <body>
 	<!-- Header -->
 	<?php include('views/header.php') ?>

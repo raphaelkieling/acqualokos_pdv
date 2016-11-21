@@ -1,8 +1,12 @@
 <?php
-	if(isset($_SESSION['acesso'])){
-		$id = $_SESSION['acesso'];
-	}else{
-		unset($_SESSION['acesso']);
-		header("location:index.php");
+	session_start();
+	if(isset($_SESSION['acesso-total'])=="logado")
+	{
+		return true;
+	}
+	else
+	{
+		unset($_SESSION['acesso-total']);
+		header("location:index.php?erro-acesso");
 	}
 ?>

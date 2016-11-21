@@ -16,6 +16,7 @@
 			</li>
 			<li><a href="acesso_global.php"> <i class="fa fa-filter" aria-hidden="true"></i>Filtragem Global </a></li>
 			<li><a href="acesso_global.php"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a></li>
+			<li><a href="index.php"> <i class="fa fa-sign-out" aria-hidden="true"></i> </a></li>
 			<div class="clear"></div>
 		</ul>
 	</div>

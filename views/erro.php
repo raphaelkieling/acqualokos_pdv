@@ -18,3 +18,14 @@
 <?php
 	}
 ?>
+
+
+<?php
+	if(isset($_GET['erro-acesso'])){
+?>
+		<div class="aviso form-controlado">
+			Está tentando entrar sem permissão?
+		</div>
+<?php
+	}
+?>

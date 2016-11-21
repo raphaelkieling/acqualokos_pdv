@@ -25,6 +25,8 @@ h1{
 	background: #e74c3c;
 	border-radius: 3px;
 	color:white;
+	margin-bottom: 30px;
+	box-shadow:  0 0 20px rgba(0,0,0,0.5);
 }
 .aviso-sucesso{
 	padding: 5px;
@@ -32,6 +34,8 @@ h1{
 	background:#2ecc71;
 	border-radius: 3px;
 	color:white;
+	margin-bottom: 30px;
+	box-shadow:  0 0 20px rgba(0,0,0,0.5);
 }
 /*Fim Avisos*/
 /*Header*/
