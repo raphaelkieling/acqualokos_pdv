@@ -11,27 +11,45 @@
 		<br><br>
 		<form action="sistema/confirmacao-lista-acqua.php" method="post">
 		<h1>Revisão de Pontos de Venda para Confirmação</h1>
+		<?php 
+			$select_l = BuscaListaid($conexao);
+			while($listas = mysqli_fetch_assoc($select_l)){
+		?>
 		<table class="texto-centralizado table-blue table-hover">
-			<tr>
-				<th>Id:</th>
-				<th>Nome:</th>
-				<th>Documento:</th>
-				<th>Ponto de Venda:</th>
-				<th>Localidade:</th>
-				<th>Responsável:</th>
-				<th>Revendedor:</th>
-				<th>Data:</th>
-			</tr>
-			<?php
-			$select = BuscaListaAcqua($conexao);
-			while($dados = mysqli_fetch_assoc($select)){
+		<tr>
+			<th colspan="9"><h3>Lista = <?= $listas['id'] ?></h3></th>
+		</tr>
+		<tr>
+			<th>Id:</th>
+			<th>Nome:</th>
+			<th>Documento:</th>
+			<th>Ponto de Venda:</th>
+			<th>Localidade:</th>
+			<th>Responsável:</th>
+			<th>Revendedor:</th>
+			<th>Data:</th>
+			<th>Nmrº:</th>
+		</tr>
+		<form action="sistema/confirmacao-lista-acqua.php" method="post">
+		<?php
+			$contador_dados = 0;
+			$select = BuscaListaAcqua($conexao,$listas['id']);
+			while($dados = mysqli_fetch_assoc($select))
+			{
+				$contador_dados++;
 				include("views/tabela.php");
 			}
-			?>
-		</table>
-
-		<button type="submit" class="btn btn-sucesso btn-big ">Aceitar Lista</button>
+			echo $contador_dados;
+		?>		
+		<tr>
+			<td colspan="9"><button type="submit" class="btn btn-sucesso btn-big form-controlado">Aceitar Lista</button></td>
+		</tr>
 		</form>
+		<?php
+
+			} 
+		?>
+		</table>
 	</div>
 </body>
 </html>

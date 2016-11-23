@@ -29,8 +29,15 @@
 				<td>Revendedor:</td>
 				<td>
 					<select required name="revendedor">
-						<option value="0">Revendedor 0</option>
-						<option value="1">Revendedor 1</option>
+					<?php 
+						$select = MostrarRevendedores($conexao);
+						while($nomes = mysqli_fetch_assoc($select)){ 
+					?>
+							<!-- Saiu do php -->
+							<option value="<?= $nomes['id'];?>"><?= $nomes['nome'];?></option>
+					<?php
+						}
+					 ?>
 					</select>
 				</td>
 			</tr>
@@ -48,7 +55,7 @@
 			</tr>
 			<?php } ?>
 		</table>
-		<button class="btn btn-sucesso btn-right btn-big form-controlado" type="submit">Validar Conteudo</button>
+		<button class="btn btn-sucesso btn-right btn-big form-controlado" type="submit">CADASTRAR</button>
 		<div class="clear"></div>
 		</form>
 	</div>

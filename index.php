@@ -8,7 +8,7 @@ include('views/head.php')
 	<!-- Header -->
 	<div class="container main">
 		<?php include("views/erro.php");?>
-		<h1><center>Trabalha conosco? Loge-se</center></h1>
+		<h1><center>Trabalha conosco? Logue-se</center></h1>
 		<div class="login-acesso">
 			<img src="img/logo-acqua-lokos.png" alt="">
 			<form action="controller-login.php" method="post">
@@ -19,3 +19,4 @@ include('views/head.php')
 		<center style="margin-top:40px;"><small>Está com problemas? Ligue para (51) 9412-1300</small></center>
 	</div>
 </body>
+?>

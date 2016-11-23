@@ -4,7 +4,7 @@
 
 	include("sistema/conexao.php");
 
-	if(isset($_POST['senha_total'])){//0 Geral para as pessoas
+	if(isset($_POST['senha_total'])){//0 mesma que o acqua
 		$senha = md5($_POST['senha_total']);
 		if(logar($conexao,$senha,2)){
 			$_SESSION['acesso-total'] = "logado";
@@ -25,7 +25,7 @@
 		}
 	}
 
-	if(isset($_POST['acqua_senha'])){//2 - 123
+	if(isset($_POST['acqua_senha'])){//2 - acqua_lokos
 		$acqualokos =md5( $_POST['acqua_senha']);
 		if(logar($conexao,$acqualokos,2)){
 			header("location:acqualokos_login_acess.php");
@@ -35,7 +35,7 @@
 		}
 	}
 
-	if(isset($_POST['admin_senha'])){ //3 - 123
+	if(isset($_POST['admin_senha'])){ //3 - admin
 		$admin         = md5($_POST['admin_senha']);
 		if(logar($conexao,$admin,3)){
 			header("location:admin_login_acess.php");

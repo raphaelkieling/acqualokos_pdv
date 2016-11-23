@@ -1,4 +1,4 @@
-<tr >
+<tr class="tabela-global">
 	<td><small><input type="text" name="id[]" value="<?= $dados['id']?>" hidden><?= $dados['id']?></small></td>
 	<td><small><?= $dados['nome']?></small></td>
 	<td><small><?= $dados['documento']?></small></td>
@@ -7,5 +7,4 @@
 	<td><small><?= $dados['responsavel']?></small></td>
 	<td><small><?= $dados['revendedor']?></small></td>
 	<td><small><?= $dados['data']?></small></td>
-	<td><small><input type="text" name="lista_id" value="<?= $dados['lista_id']?>" hidden><?= $dados['lista_id']?></small></td>
 </tr>

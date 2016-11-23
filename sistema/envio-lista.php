@@ -12,11 +12,27 @@
 		
 	$data            = date('d/m/Y');
 
-	
+	$pego = false; 
+
+	if(PegarIdUltimo($conexao)==1){
+		ListaUsada($conexao,$revendedor);
+		$pego = true;
+	}
+
 	for ($i = 0; $i <= 14; $i++) {
-		if($funcionarios[$i]!="" || empty($funcionarios)){
-			$id_lista = PegarIdUltimo($conexao); 
-			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$i);
+		if($funcionarios[$i]!=""){
+			if($pego==true){
+				$lista_id = PegarIdUltimoPrimeiro($conexao);
+			}else{
+				$lista_id = PegarIdUltimo($conexao);
+			}
+			
+			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
 		}
 	}
+	if($pego != true){
+		ListaUsada($conexao,$revendedor);
+	}
+	header("location:../criar-lista.php?erro-sucesso");
+
 ?>
