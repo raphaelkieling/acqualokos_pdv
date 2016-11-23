@@ -13,12 +13,12 @@
 			header("location:index.php?erro");
 		}
 	}
-	if(isset($_POST['revendedor_senha'])){//1 - 456 / 789
+	if(isset($_POST['revendedor_senha'])){//1 - fasc 
 		$senha = md5($_POST['revendedor_senha']);
 		$revendedor = $_POST['revendedor_nome'];
 		if(logarRevendedor($conexao,$revendedor,$senha,1)){
-			$id_revendedor = pegarRevendedor($conexao,$senha);
-			$_SESSION['acesso'] = $id_revendedor;
+			//$id_revendedor = pegarRevendedor($conexao,$senha); Redundante por o $revendedor já traz o id
+			$_SESSION['acesso'] = $revendedor;
 			header("location:revendedor_login_acess.php");
 		}else{
 			header("location:revendedor_login.php?erro");

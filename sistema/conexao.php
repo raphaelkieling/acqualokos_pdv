@@ -19,8 +19,8 @@ function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 		return false;
 	}
 }
-function pegarRevendedor($conexao,$senha){
-	$select         = mysqli_query($conexao,"select revendedor from banco_senhas where senha='$senha'");
+function pegarRevendedor($conexao,$senha,$revendedor){
+	$select            = mysqli_query($conexao,"select revendedor from banco_senhas where senha='$senha' and revendedor");
 	while($id_revendor = mysqli_fetch_assoc($select)){
 		return $id_revendor['revendedor'];
 	}
@@ -30,7 +30,8 @@ function pegarRevendedor($conexao,$senha){
 //REVENDEDOR acesso
 function confimarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista que foi enviada para o revendedor
 	mysqli_query($conexao,"insert into banco_acqualokos (nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id)select nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id from banco_revendedor where id=$id[$i]"); 
-	mysqli_query($conexao,"delete from banco_revendedor where id=$id[$i] and lista_id=$lista_id"); 
+	mysqli_query($conexao,"delete from banco_revendedor where id=$id[$i]");
+
 }
 function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i){
 	//insere a lista na pagina do revendedor para que a lista que foi inserida possa ser usada depois na pagina dos funcioarios
@@ -52,13 +53,24 @@ function MostrarRevendedores($conexao)
 function BuscaListaAcqua($conexao,$lista_id){
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
-	return mysqli_query($conexao,"select * from banco_acqualokos where lista_id=$lista_id");
+	return mysqli_query($conexao,"select * from banco_acqualokos");
 }
 function confimarListaAcqua($conexao,$id,$lista_id,$i){
 	//Confirma a lista de acqua lokos
-	mysqli_query($conexao,"insert into banco_global (nome,documento,ponto_venda,localidade,responsavel,revendedor,data)select nome,documento,ponto_venda,localidade,responsavel,revendedor,data from banco_acqualokos where id=$id[$i] and lista_id=$lista_id");
-	mysqli_query($conexao,"delete from banco_id_listas where id=$lista_id");
-	mysqli_query($conexao,"delete from banco_acqualokos where id=$id[$i]");
+	var_dump($id);
+	echo $id[$i];
+	$sql = "INSERT INTO banco_global(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) SELECT nome,documento,ponto_venda,localidade,responsavel,revendedor,data from banco_acqualokos where id= $id[$i] and lista_id= $lista_id";
+
+	echo "<small>".$i." = ".$sql."</small>";
+
+	if(mysqli_query($conexao,$sql) or die(mysqli_error($conexao))){
+		mysqli_query($conexao,"delete from banco_acqualokos where id=$id[$i]");
+		mysqli_query($conexao,"delete from banco_id_listas where id=$lista_id");
+		return true;
+	}else{
+		return false;
+	}
+	
 }
 //FIM acqualokoso acesso
 
@@ -67,7 +79,7 @@ function BuscaListaGlobal($conexao)
 {
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
-	return mysqli_query($conexao,"select * from banco_global order by id");
+	return mysqli_query($conexao,"select banco_global.*,banco_nomes_revendedor.nome as NomeRevendedor from banco_global join banco_nomes_revendedor on banco_nomes_revendedor.nome = banco_global.id");
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {

@@ -17,7 +17,7 @@
 		?>
 		<table class="texto-centralizado table-blue table-hover">
 		<tr>
-			<th colspan="9"><h3>Lista = <?= $listas['id'] ?></h3></th>
+			<th colspan="9"><h3>Lista <?= $listas['id'] ?></h3></th>
 		</tr>
 		<tr>
 			<th>Id:</th>
@@ -39,14 +39,16 @@
 				$contador_dados++;
 				include("views/tabela.php");
 			}
-			echo $contador_dados;
+			if($contador_dados<=0){
+				include("views/aguardo.php");
+			}else{
 		?>		
 		<tr>
 			<td colspan="9"><button type="submit" class="btn btn-sucesso btn-big form-controlado">Aceitar Lista</button></td>
 		</tr>
 		</form>
 		<?php
-
+			}
 			} 
 		?>
 		</table>

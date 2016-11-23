@@ -13,12 +13,15 @@
 		<br><br>
 		<h1>Revisão de Pontos de Venda para Confirmação</h1>
 		<?php 
+			$contador_lista = 0;
 			$select_l = BuscaListaidRevendedor($conexao,$id_revendedor);
 			while($listas = mysqli_fetch_assoc($select_l)){
+				$contador_lista++;
 		?>
+
 		<table class="texto-centralizado table-blue table-hover">
 		<tr>
-			<th colspan="9"><h3>Lista = <?= $listas['id'] ?></h3></th>
+			<th colspan="9"><h3>Lista <?= $listas['id'] ?></h3></th>
 		</tr>
 		<tr>
 			<th>Id:</th>
@@ -33,20 +36,28 @@
 		</tr>
 		<form action="sistema/confirmacao-lista.php" method="post">
 		<?php
-
+			$contador_dados =0;
 			$select = BuscaLista($conexao,$id_revendedor,$listas['id']);
 			while($dados = mysqli_fetch_assoc($select))
 			{
+				$contador_dados++;
 				include("views/tabela.php");
 			}
+			if($contador_dados<=0){
+				include("views/aguardo.php");
+			}else{
 			?>
 			<tr>
 				<td colspan="9"><button type="submit" class="btn btn-sucesso btn-big form-controlado">Aceitar Lista</button></td>
 			</form>
 			</tr>	
 		<?php
-
+			}
 			} 
+			if($contador_lista<=0)
+			{
+				echo "<h2><center>Nada por enquanto...</center></h2>";
+			}
 		?>
 		</table>
 

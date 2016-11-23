@@ -6,7 +6,8 @@
 	//var_dump($id);
 
 	if(!count($id)<=0){
-		for($i=0;$i<=count($id);$i++){
+		for($i=0;$i<count($id);$i++){
+			echo $id[$i];
 			confimarListaAcqua($conexao,$id,$lista_id,$i);
 			//echo "<br>Enviado";
 		}

@@ -5,6 +5,6 @@
 	<td><small><?= $dados['ponto_venda']?></small></td>
 	<td><small><?= $dados['localidade']?></small></td>
 	<td><small><?= $dados['responsavel']?></small></td>
-	<td><small><?= $dados['revendedor']?></small></td>
+	<td><small><?= $dados['NomeRevendedor']?></small></td>
 	<td><small><?= $dados['data']?></small></td>
 </tr>
