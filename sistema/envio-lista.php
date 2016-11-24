@@ -19,6 +19,7 @@
 		$pego = true;
 	}
 
+
 	for ($i = 0; $i <= 14; $i++) {
 		if($funcionarios[$i]!=""){
 			if($pego==true){
@@ -33,6 +34,6 @@
 	if($pego != true){
 		ListaUsada($conexao,$revendedor);
 	}
-	header("location:../criar-lista.php?erro-sucesso");
+	header("location:../criar-lista.php?erro-sucesso-ponto-venda");
 
 ?>

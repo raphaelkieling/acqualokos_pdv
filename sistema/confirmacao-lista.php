@@ -9,7 +9,7 @@
 			confimarListaRevendedor($conexao,$id,$lista_id,$i);
 			//echo "<br>Enviado";
 		}
-		header("location:../revendedor_login_acess.php?erro-sucesso");
+		header("location:../revendedor_login_acess.php?erro-sucesso-revendedor");
 	}else{
 		
 		header("location:../revendedor_login_acess.php?erro");

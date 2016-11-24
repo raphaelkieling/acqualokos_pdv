@@ -1,50 +1,19 @@
-	<?php include('views/head.php') ?>
+<?php
+	// Evita que alguma pessoa entre no site;
+	include('sistema/verificar_login.php');
+	include('views/head.php'); 
+?>
 <body>
 	<!-- Header -->
-	<?php include('views/header.php') ?>
+	<?php include('views/header.php');?>
 	<div class="container main">
-		<table id="data" class="texto-centralizado table-blue table-hover">
-			<tr><td colspan="8"><input type="text" id="pesquisa-geral" class="form-controlado" onkeyup="procurar();" placeholder="Pesquisa Geral"></td></tr>
-			<tr>
-				<th>Id:</th>
-				<th>Nome:</th>
-				<th>Documento:</th>
-				<th>Ponto de Venda:</th>
-				<th>Localidade:</th>
-				<th>Responsável:</th>
-				<th>Revendedor:</th>
-				<th>Data:</th>
-
-			</tr>
-			<?php
-			$select = BuscaListaGlobal($conexao);
-			while($dados = mysqli_fetch_assoc($select)){
-				include("views/tabela_pesquisa.php");
-			}
-			?>
-		</table>
-		<script src="jquery-3.1.1.js"></script>
-		<script>
-			function procurar(){
-				var palavra = $("#pesquisa-geral").val();
-				if(palavra.length>0)
-				{
-					$(".tabela-global").hide();
-					$.ajax({
-						type:"GET",
-						url:"views/tabela_pesquisa_procura.php",
-						data:{palavra:palavra},
-						success:function(data)
-						{
-							$("#data").append(data);
-						}
-					});
-				}else{
-					$(".dado-gerado").remove();
-					$(".tabela-global").show();
-				}
-
-
-			}
-		</script>
+		<?php include("views/erro.php");?>
+		<div class="login-acesso">
+			<img src="img/logo-bilheteria.png" alt="">
+			<form action="controller-login.php" method="post">
+				<input type="password" name="global_senha" class="form-controlado" placeholder="Senha global">
+				<button class="btn btn-sucesso form-controlado">Acessar</button>
+			</form>
+		</div>
 	</div>
+</body>

@@ -44,5 +44,15 @@
 			header("location:admin_login.php?erro");
 		}
 	}
-
+//global_senha
+	if(isset($_POST['global_senha'])){ //4 - bilheteria
+		$global         = md5($_POST['global_senha']);
+		echo $global;
+		if(logar($conexao,$global,4)){
+			header("location:acesso_global_acess.php");
+			$_SESSION['acesso-bilheteria'] = 4;
+		}else{
+			header("location:acesso_global.php?erro");
+		}
+	}
 ?>

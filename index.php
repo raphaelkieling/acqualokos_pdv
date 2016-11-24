@@ -2,6 +2,7 @@
 session_start();
 unset($_SESSION['acesso']);
 unset($_SESSION['acesso-total']);
+unset($_SESSION['acesso-bilheteria']);
 include('views/head.php') 
 ?>
 <body>

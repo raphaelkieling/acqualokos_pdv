@@ -28,27 +28,20 @@
 			<th>Responsável:</th>
 			<th>Revendedor:</th>
 			<th>Data:</th>
-			<th>Nmrº:</th>
-		</tr>
+			<th>Numero Lista:</th>
 		<form action="sistema/confirmacao-lista-acqua.php" method="post">
 		<?php
-			$contador_dados = 0;
 			$select = BuscaListaAcqua($conexao,$listas['id']);
 			while($dados = mysqli_fetch_assoc($select))
 			{
-				$contador_dados++;
 				include("views/tabela.php");
 			}
-			if($contador_dados<=0){
-				include("views/aguardo.php");
-			}else{
 		?>		
 		<tr>
 			<td colspan="9"><button type="submit" class="btn btn-sucesso btn-big form-controlado">Aceitar Lista</button></td>
 		</tr>
 		</form>
 		<?php
-			}
 			} 
 		?>
 		</table>

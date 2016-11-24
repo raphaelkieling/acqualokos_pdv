@@ -32,7 +32,7 @@
 			<th>Responsável:</th>
 			<th>Revendedor:</th>
 			<th>Data:</th>
-			<th>Nmrº:</th>
+			<th>Numero Lista:</th>
 		</tr>
 		<form action="sistema/confirmacao-lista.php" method="post">
 		<?php

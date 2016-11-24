@@ -11,6 +11,7 @@
 			confimarListaAcqua($conexao,$id,$lista_id,$i);
 			//echo "<br>Enviado";
 		}
+		mysqli_query($conexao,"delete from banco_id_listas where id=$lista_id");
 		header("location:../acqualokos_login_acess.php?erro-sucesso");
 	}else{
 		header("location:../acqualokos_login_acess.php?erro");
