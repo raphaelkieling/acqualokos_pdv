@@ -1,5 +1,4 @@
 	<?php 
-	include('sistema/verificar_login.php');
 	include('sistema/verificar_login_bilheteria.php');
 	include('views/head.php') 
 	?>
@@ -48,8 +47,6 @@
 					$(".dado-gerado").remove();
 					$(".tabela-global").show();
 				}
-
-
 			}
 		</script>
 	</div>

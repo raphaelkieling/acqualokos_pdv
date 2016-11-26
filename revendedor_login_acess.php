@@ -1,6 +1,5 @@
 <?php
 	// Evita que alguma pessoa entre no site;
-	include('sistema/verificar_login.php');
 	include('sistema/verificar_login_revendedor.php');
 	include('views/head.php'); 
 	$id_revendedor = $_SESSION['acesso'];
@@ -62,5 +61,11 @@
 		</table>
 
 	</div>
+	<script src="jquery-3.1.1.js"></script>
+	<script>
+		$(".img-aguardo").click(function(){
+			alert("Quando esta imagem aparecer significa que o acqua lokos está verificando sua lista");
+		});
+	</script>
 </body>
 </html>

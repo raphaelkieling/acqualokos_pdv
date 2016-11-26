@@ -27,13 +27,13 @@
 			}else{
 				$lista_id = PegarIdUltimo($conexao);
 			}
-			
 			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
 		}
 	}
 	if($pego != true){
 		ListaUsada($conexao,$revendedor);
 	}
-	header("location:../criar-lista.php?erro-sucesso-ponto-venda");
+	header("location:../criar-lista_acess.php?erro-sucesso-ponto-venda");
+	
 
 ?>

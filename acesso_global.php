@@ -1,6 +1,5 @@
 <?php
 	// Evita que alguma pessoa entre no site;
-	include('sistema/verificar_login.php');
 	include('views/head.php'); 
 ?>
 <body>

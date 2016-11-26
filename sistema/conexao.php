@@ -64,10 +64,17 @@ function confimarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista 
 }
 function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i){
 	//insere a lista na pagina do revendedor para que a lista que foi inserida possa ser usada depois na pagina dos funcioarios
-	$sql = "insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id) values ('$funcionarios[$i]','$documentos[$i]','$pontoVenda','$localidade','$responsavel','$revendedor','$data','$lista_id')";
+	$funcionario = addslashes($funcionarios[$i]); //tratar as aspas
+	$documento   = addslashes($documentos[$i]);
+	$pontoVenda  = addslashes($pontoVenda);
+	$localidade  = addslashes($localidade);
+	$responsavel = addslashes($responsavel);
+	$revendedor  = addslashes($revendedor);
+
+	$sql = "insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id) values ('$funcionario','$documento','$pontoVenda','$localidade','$responsavel','$revendedor','$data','$lista_id')";
 	
 	$inserido = mysqli_query($conexao,$sql);
-
+	echo $sql;
 	if($inserido){
 		return true;
 	}else{
@@ -94,8 +101,10 @@ function confimarListaAcqua($conexao,$id,$lista_id,$i){
 	$sql = "INSERT INTO banco_global(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) SELECT nome,documento,ponto_venda,localidade,responsavel,revendedor,data from banco_acqualokos where id= $id[$i] and lista_id= $lista_id";
 
 	if(mysqli_query($conexao,$sql) or die(mysqli_error($conexao))){
-		mysqli_query($conexao,"delete from banco_acqualokos where id=$id[$i]");
-		return true;
+		$sqlDelete = "delete from banco_acqualokos where id=$id[$i]";
+		if(mysqli_query($conexao,$sqlDelete)){
+			return true;
+		}	
 	}else{
 		return false;
 	}
@@ -112,7 +121,7 @@ function BuscaListaGlobal($conexao)
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {
-	return mysqli_query($conexao,"SELECT * from banco_global where nome like '%$palavra%' ");
+	return mysqli_query($conexao,"SELECT * from banco_global where nome like '%$palavra%' or documento like '%palavra%' ");
 }
 // fim GLOBAL
 

@@ -97,4 +97,34 @@
 			return false;
 		}
 	}
+	function ModificarSenhaLista($conexao,$senha)
+	{
+		$senhaCriptografada = md5($senha);
+		//echo $senhaCriptografada;
+		//echo $senha;
+		$sql = "UPDATE banco_senhas SET senha='$senhaCriptografada' WHERE tipo_entrada=5";
+		if(mysqli_query($conexao,$sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function DeletarRevendedor($conexao,$id)
+	{
+		$sql = "delete from banco_nomes_revendedor where id=$id";
+		if(mysqli_query($conexao,$sql))
+		{
+			$sql2 = "delete from banco_senhas where revendedor=$id";
+			if(mysqli_query($conexao,$sql2))
+			{
+				return true;
+			}else{
+				return false;
+			}
+			
+		}else{
+			return false;
+		}
+	}
 ?>

@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(isset($_SESSION['acesso-bilheteria'])==4)
 	{
 		return true;
