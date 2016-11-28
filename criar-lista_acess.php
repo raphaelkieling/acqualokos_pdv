@@ -30,6 +30,7 @@
 				<td>Revendedor:</td>
 				<td>
 					<select required name="revendedor">
+						<option value="" selected></option>
 					<?php 
 						$select = MostrarRevendedores($conexao);
 						while($nomes = mysqli_fetch_assoc($select)){ 

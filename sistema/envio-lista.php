@@ -21,7 +21,8 @@
 
 
 	for ($i = 0; $i <= 14; $i++) {
-		if($funcionarios[$i]!=""){
+		$funcionarioString  = trim($funcionarios[$i]);//Retirei os espaços para nao entrar errado se sem querer for apertado espaço
+		if($funcionarioString!=""){
 			if($pego==true){
 				$lista_id = PegarIdUltimoPrimeiro($conexao);
 			}else{

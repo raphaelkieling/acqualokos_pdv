@@ -123,8 +123,8 @@ table{
 	padding: 10px;
 	border-top:solid 1px #3498db;
 }
-table td{
-	font-size: 18px;
+table th{
+	font-size: 1em;
 }
 table input,table select{
 	width: 100%;
@@ -160,3 +160,12 @@ td img{
 	margin-bottom: 10px;
 }
 /*Saida revendedor*/
+/*MEDIA QUERY*/
+@media screen and (max-width: 600px){
+	.login-acesso{
+		width: 100%;
+	}
+	.container{
+		width: 90%;
+	}
+}

@@ -33,13 +33,13 @@
 				var palavra = $("#pesquisa-geral").val();
 				if(palavra.length>0)
 				{
-					$(".tabela-global").hide();
 					$.ajax({
 						type:"GET",
 						url:"views/tabela_pesquisa_procura.php",
 						data:{palavra:palavra},
 						success:function(data)
 						{
+							$(".tabela-global").hide();
 							$("#data").append(data);
 						}
 					});

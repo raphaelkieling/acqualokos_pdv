@@ -121,7 +121,7 @@ function BuscaListaGlobal($conexao)
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {
-	return mysqli_query($conexao,"SELECT * from banco_global where nome like '%$palavra%' or documento like '%palavra%' ");
+	return mysqli_query($conexao,"SELECT * from banco_global where nome like '%$palavra%' or documento like '%$palavra%' or revendedor like '%$palavra%'");
 }
 // fim GLOBAL
 

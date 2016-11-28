@@ -1,8 +1,8 @@
 <?php 
 	include("../sistema/conexao.php");
 	$palavra = $_GET['palavra'];
-
-	$select = BuscaListaGlobalPalavra($conexao,$palavra);
+	$digitacao = addslashes($palavra);
+	$select = BuscaListaGlobalPalavra($conexao,$digitacao);
 	while($dados = mysqli_fetch_assoc($select)){
 ?>
 	<tr class="tabela-global dado-gerado">

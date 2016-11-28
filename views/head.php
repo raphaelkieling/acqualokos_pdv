@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" href="css/style-compress.css">
 	<link rel="stylesheet" href="css/form.css">
