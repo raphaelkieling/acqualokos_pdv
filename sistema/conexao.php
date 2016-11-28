@@ -117,11 +117,14 @@ function BuscaListaGlobal($conexao)
 {
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
-	return mysqli_query($conexao,"SELECT * from banco_global");
+	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc";
+	return mysqli_query($conexao,$sql);
+
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {
-	return mysqli_query($conexao,"SELECT * from banco_global where nome like '%$palavra%' or documento like '%$palavra%' or revendedor like '%$palavra%'");
+	return mysqli_query($conexao,"SELECT banco_global.*, banco_nomes_revendedor.id,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' ORDER BY banco_global.data desc");
+
 }
 // fim GLOBAL
 
