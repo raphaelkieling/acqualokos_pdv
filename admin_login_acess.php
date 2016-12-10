@@ -71,6 +71,25 @@
 				<td></td>
 				<td><button onclick="DeletarLogins();" class="btn btn-perigo">Deletar</button></td>
 			</tr>
+			<tr>
+				<td>Deletar Lista</td>
+				<form action="sistema/admin/deletar_lista.php">
+					<td>
+						<select required name="idLista" required>
+						<?php 
+							$select_l = BuscaListaid($conexao);
+							while($listas = mysqli_fetch_assoc($select_l)){
+						?>
+								<!-- Saiu do php -->
+								<option value="<?= $listas['id'];?>"><?= $listas['id'];?></option>
+						<?php
+							}
+						 ?>
+						</select>
+						<td><button class="btn btn-perigo">Deletar</button></td>
+					</td>
+				</form>	
+			</tr>
 		</table>
 		<br>
 		<br>
@@ -120,10 +139,11 @@
 				<form action="sistema/admin/modificar_senha_lista.php" method="get">
 					<td>Senha Criação de Listas:</td>
 					<td><input type="text" name="senhaLista" placeholder="Nova senha..." required></td>
-					<td><button class="btn btn-atencao">Modificar</button></td>
+					<td><button class="btn btn-atencao"> Modificar </button></td>
 				</form>
 			</tr>
 		</table>
+
 		<script>
 			function DeletarBanco()
 			{

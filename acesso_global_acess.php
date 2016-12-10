@@ -7,8 +7,9 @@
 	<!-- Header -->
 	<?php include('views/header.php') ?>
 	<div class="container main">
-		<table id="data" class="texto-centralizado table-blue table-hover">
-			<tr><td colspan="8"><input type="text" id="pesquisa-geral" class="form-controlado" onkeyup="procurar();" placeholder="Pesquisa Geral"></td></tr>
+		<input type="text" id="pesquisa-geral" class="form-control" onkeyup="procurar();" placeholder="Pesquisa Geral">
+		<div class="table-responsive">
+			<table id="data" class="table table-bordered texto-centralizado table-blue table-hover">
 			<tr>
 				<th>Id:</th>
 				<th>Nome:</th>
@@ -18,6 +19,8 @@
 				<th>Responsável:</th>
 				<th>Revendedor:</th>
 				<th>Data:</th>
+				<th>Vindas:</th>
+				<th>Adicionar:</th>
 
 			</tr>
 			<?php
@@ -27,6 +30,7 @@
 			}
 			?>
 		</table>
+		</div>
 		<script src="jquery-3.1.1.js"></script>
 		<script>
 			function procurar(){

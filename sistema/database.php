@@ -19,4 +19,7 @@
 		//);
 		//
 	$conexao = mysqli_connect($db['local'],$db['usuario'],$db['senha'],$db['banco']);
+	if(!$conexao){
+		echo "<center>Banco De Dados Offline</center>";
+	}
 ?>

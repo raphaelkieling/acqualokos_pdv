@@ -1,12 +1,11 @@
 <?php 
-session_start();
+	session_start();
 	unset($_SESSION['acesso-total']);
 	unset($_SESSION['acesso']);
 	unset($_SESSION['acqua']);
 	unset($_SESSION['admin']);
 	unset($_SESSION['acesso-bilheteria']);
 	unset($_SESSION['acesso-lista']);
-
 include('views/head.php') 
 ?>
 <body>

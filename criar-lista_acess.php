@@ -15,21 +15,21 @@
 		<h1>Lista ponto de venda</h1>
 		<table>
 			<tr>
-				<td>Ponto Venda:</td>
-				<td><input type="text" required name="pontoVenda"></td>
+				<td><br>Ponto Venda:</td>
+				<td><br><input type="text" class="form-control"  required name="pontoVenda"></td>
 			</tr>
 			<tr>
 				<td>Localidade:</td>
-				<td><input type="text" required name="localidade"></td>
+				<td><input type="text" class="form-control"  required name="localidade"></td>
 			</tr>
 			<tr>
 				<td>Responsável:</td>
-				<td><input type="text" required name="responsavel" placeholder="Responsável pelo Ponto de Venda"></td>
+				<td><input type="text" class="form-control" required name="responsavel" placeholder="Responsável pelo Ponto de Venda"></td>
 			</tr>
 			<tr>
 				<td>Revendedor:</td>
 				<td>
-					<select required name="revendedor">
+					<select class="form-control" required name="revendedor">
 						<option value="" selected></option>
 					<?php 
 						$select = MostrarRevendedores($conexao);
@@ -47,13 +47,13 @@
 		<h1>Funcionários</h1>
 		<table id="funcionarios-add">
 			<tr>
-				<td>Nome:</td>
-				<td>Documento:</td>
+				<th><br>Nome:</th>
+				<th><br>Documento:</th>
 			</tr>
 			<?php for($i=0; $i < 15 ; $i++) { ?>
 			<tr>
-				<td><input name="n[]" type="text" placeholder="Nome do Funcionário"></td>
-				<td><input name="d[]" type="text" placeholder="CPF ou RG"></td>
+				<td><input name="n[]" type="text" class="form-control" placeholder="Nome do Funcionário"></td>
+				<td><input name="d[]" type="text" class="form-control" placeholder="CPF ou RG"></td>
 			</tr>
 			<?php } ?>
 		</table>

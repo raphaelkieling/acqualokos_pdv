@@ -5,7 +5,7 @@
 	<td><small><?= $dados['ponto_venda']?></small></td>
 	<td><small><?= $dados['localidade']?></small></td>
 	<td><small><?= $dados['responsavel']?></small></td>
-	<td><small><?= $dados['revendedor']?></small></td>
+	<td><small><?= $dados['nomer']?></small></td>
 	<td><small><?= $dados['data']?></small></td>
 	<td><small><input type="text" name="lista_id" value="<?= $dados['lista_id']?>" hidden><?= $dados['lista_id']?></small></td>
 </tr>

@@ -2,8 +2,9 @@
 	include("conexao.php");
 
 	$id = $_POST['id'];
-	$lista_id = $_POST['lista_id'];
 	var_dump($id);
+	$lista_id = $_POST['lista_id'];
+	var_dump($lista_id);
 	if(!count($id)<=0){
 		for($i=0;$i<count($id);$i++){
 			confimarListaRevendedor($conexao,$id,$lista_id,$i);

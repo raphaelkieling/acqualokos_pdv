@@ -15,7 +15,8 @@
 			return false;
 		}
 	}
-	function ResetarLogins($conexao){
+	function ResetarLogins($conexao)
+	{
 		 $n = mysqli_query($conexao,"delete from banco_nomes_revendedor");
 		 $s = mysqli_query($conexao,"delete from banco_senhas");
 		 if($n && $s)
@@ -23,6 +24,17 @@
 			return true;
 		}else{
 			return false;
+		}
+	}
+	function ResetarLista($conexao,$id)
+	{
+		$l = mysqli_query($conexao,"delete from banco_id_listas where id=$id");
+		$lr = mysqli_query($conexao,"delete from banco_revendedor where lista_id=$id");
+		$la = mysqli_query($conexao,"delete from banco_acqualokos where lista_id=$id");
+
+		if($l && $lr && $la)
+		{
+			return true;
 		}
 	}
 	function PegarIdRevendedorNome($conexao)
