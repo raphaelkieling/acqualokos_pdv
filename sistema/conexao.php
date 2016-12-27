@@ -1,4 +1,9 @@
 <?php
+	date_default_timezone_get('America/Sao_Paulo');
+	$ip = getenv("REMOTE_ADDR");
+	$data = date("d.m.y");
+	$hora = date("H:i:s"); 
+
 	//configuração geral
 	include("database.php");
 	date_default_timezone_set('America/Sao_Paulo');
@@ -85,7 +90,7 @@ function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$
 function MostrarRevendedores($conexao)
 {
 	// Mostra os nomes dos revendedores na tela de login e ciração de listas com o id vinculado
-	$sql = "SELECT * from banco_nomes_revendedor";
+	$sql = "SELECT * from banco_nomes_revendedor order by nome";
 	return mysqli_query($conexao,$sql);
 }
 //FIM revendedor acesso
@@ -118,13 +123,13 @@ function BuscaListaGlobal($conexao)
 {
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
-	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc";
+	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc limit 10";
 	return mysqli_query($conexao,$sql);
 
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {
-	return mysqli_query($conexao,"SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' ORDER BY banco_global.data desc");
+	return mysqli_query($conexao,"SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' ORDER BY banco_global.data desc limit 10");
 
 }
 function addVeio($conexao,$id,$veio)
@@ -140,8 +145,8 @@ function addVeio($conexao,$id,$veio)
 // fim GLOBAL
 
 //listas para dividir sessões.
-function ListaUsada($conexao,$revendedor){
-	if(mysqli_query($conexao,"insert into banco_id_listas(lista,revendedor) values('usado','$revendedor')"))
+function ListaUsada($conexao,$revendedor,$pontoVenda){
+	if(mysqli_query($conexao,"insert into banco_id_listas(lista,revendedor,p_venda) values('usado','$revendedor','$pontoVenda')"))
 	{
 		return true;
 	}else{

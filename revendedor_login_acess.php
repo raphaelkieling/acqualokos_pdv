@@ -20,7 +20,7 @@
 		<div class="table-responsive">
 			<table class="table texto-centralizado table-blue table-hover">
 			<tr>
-				<th colspan="9"><h3 class="text-center">Lista <?= $listas['id'] ?> - Revendedor <?= $listas['nomer'] ?></h3></th>
+				<th colspan="9"><h3 class="text-center">Lista <?= $listas['id'] ?> - <?= $listas['p_venda'] ?></h3></th>
 			</tr>
 			<tr>
 				<th>Id:</th>

@@ -11,6 +11,11 @@
 			confimarListaAcqua($conexao,$id,$lista_id,$i);
 			//echo "<br>Enviado";
 		}
+
+		$file_log = fopen("admin/sistema.txt","a");
+		$escreve = fwrite($file_log,"ACQUALOKOS = Acqualokos confirmou a lita ".$lista_id." em ". $data." às ".$hora.PHP_EOL);
+		fclose($file_log);
+
 		mysqli_query($conexao,"delete from banco_id_listas where id=$lista_id");
 		header("location:../acqualokos_login_acess.php?erro-sucesso");
 	}else{

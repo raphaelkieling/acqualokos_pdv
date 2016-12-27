@@ -5,7 +5,8 @@
 	font-family: 'Questrial', sans-serif;
 }
 .container{
-	max-width: 900px;
+	width: 60%;
+	margin:0 auto;
 }
 h1{
 	color:#287596;
@@ -84,7 +85,7 @@ nav{
 nav ul li{
 	display: inline-block;
 	list-style: none;
-	padding-top: 10px;
+	padding: 10px;
 }
 nav a{
 	text-decoration: none;
@@ -122,8 +123,8 @@ table{
 	padding: 10px;
 	border-top:solid 1px #3498db;
 }
-table th{
-	font-size: 1em;
+table td{
+	font-size: 18px;
 }
 table input,table select{
 	width: 100%;
@@ -131,11 +132,6 @@ table input,table select{
 td img{
 	margin-top: 20px;
 	width: 150px;
-}
-.addVeio{
-	position: relative;
-	top:-5px;
-	width: 15px;
 }
 .table-hover tr:hover{
 	background: #f2f2f2;
@@ -164,12 +160,3 @@ td img{
 	margin-bottom: 10px;
 }
 /*Saida revendedor*/
-/*MEDIA QUERY*/
-@media screen and (max-width: 600px){
-	.login-acesso{
-		width: 100%;
-	}
-	.container{
-		width: 90%;
-	}
-}

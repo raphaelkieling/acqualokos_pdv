@@ -14,27 +14,49 @@
 
 	$pego = false; 
 
-	if(PegarIdUltimo($conexao)==1){
-		ListaUsada($conexao,$revendedor);
-		$pego = true;
-	}
+	$file_log = fopen("admin/sistema.txt","a");
+	$escreve = fwrite($file_log,"PDV = Ponto de venda criou uma lista em ". $data." às ".$hora.PHP_EOL);
 
-
-	for ($i = 0; $i <= 14; $i++) {
+	//contando o for para ver se tem funcionarios ou se nao foi mandando nenhum
+	$contador_funcionarios =0;
+	for ($i=0; $i <= 15; $i++) { 
 		$funcionarioString  = trim($funcionarios[$i]);//Retirei os espaços para nao entrar errado se sem querer for apertado espaço
 		if($funcionarioString!=""){
-			if($pego==true){
-				$lista_id = PegarIdUltimoPrimeiro($conexao);
-			}else{
-				$lista_id = PegarIdUltimo($conexao);
-			}
-			InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
+			$contador_funcionarios ++;
 		}
 	}
-	if($pego != true){
-		ListaUsada($conexao,$revendedor);
+
+	if(PegarIdUltimo($conexao)==1){
+		ListaUsada($conexao,$revendedor,$pontoVenda);
+		$pego = true;
 	}
-	header("location:../criar-lista_acess.php?erro-sucesso-ponto-venda");
+	
+	if($contador_funcionarios > 0){
+
+		for ($i = 0; $i <= 15; $i++) {
+			$funcionarioString  = trim($funcionarios[$i]);//Retirei os espaços para nao entrar errado se sem querer for apertado espaço
+			if($funcionarioString!=""){
+				if($pego==true){
+					$lista_id = PegarIdUltimoPrimeiro($conexao);
+				}else{
+					$lista_id = PegarIdUltimo($conexao);
+				}
+				$escreve = fwrite($file_log,"PDV = Criou funcionario = ".$funcionarios[$i]." - ". $data." às ".$hora.PHP_EOL);
+				InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
+			}
+		}
+		if($pego != true){
+			ListaUsada($conexao,$revendedor,$pontoVenda);
+		}
+	
+		
+		fclose($file_log);
+		
+		header("location:../criar-lista_acess.php?erro-sucesso-ponto-venda");
+
+	}else{
+		header("location:../criar-lista_acess.php?erro-lista");
+	}
 	
 
 ?>

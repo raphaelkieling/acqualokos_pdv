@@ -48,3 +48,13 @@
 <?php
 	}
 ?>
+
+<?php
+	if(isset($_GET['erro-lista'])){
+?>
+		<div class="aviso form-controlado">
+			Você não colocou nenhum funcionário ou inseriu algum caractere especial como !@#$%¨&*()_+{}^`:?.+-*/
+		</div>
+<?php
+	}
+?>

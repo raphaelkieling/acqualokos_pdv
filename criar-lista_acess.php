@@ -12,7 +12,8 @@
 		<?php if(!isset($_GET['erro-sucesso-ponto-venda'])){?>
 		<br><br>
 		<form action="sistema/envio-lista.php" method="post">
-		<h1>Lista ponto de venda</h1>
+		<center><h1>Lista ponto de venda</h1></center>
+		<p class="alert alert-warning">Preencham corretamente todo o formulário. Evite usar caractéres especias como @ & ! ' " : {} )( += = * ¨ $ #. Pois dificultará tratar os dados posteriormente. </p>
 		<table>
 			<tr>
 				<td><br>Ponto Venda:</td>
@@ -35,8 +36,8 @@
 						$select = MostrarRevendedores($conexao);
 						while($nomes = mysqli_fetch_assoc($select)){ 
 					?>
-							<!-- Saiu do php -->
-							<option value="<?= $nomes['id'];?>"><?= $nomes['nome'];?></option>
+						<!-- Saiu do php -->
+						<option value="<?= $nomes['id'];?>"><?= $nomes['nome'];?></option>
 					<?php
 						}
 					 ?>
@@ -45,22 +46,28 @@
 			</tr>
 		</table><br><br>
 		<h1>Funcionários</h1>
+		<p class="alert alert-warning">Preencha com o nome e o documento do funcionário que será liberado para o parque. Evite frases muito grandes.</p>
 		<table id="funcionarios-add">
 			<tr>
+				<th><br>Nº</th>
 				<th><br>Nome:</th>
 				<th><br>Documento:</th>
 			</tr>
 			<?php for($i=0; $i < 15 ; $i++) { ?>
 			<tr>
+				<td><?= $i ?></td>
 				<td><input name="n[]" type="text" class="form-control" placeholder="Nome do Funcionário"></td>
 				<td><input name="d[]" type="text" class="form-control" placeholder="CPF ou RG"></td>
 			</tr>
 			<?php } ?>
 		</table>
-		<button class="btn btn-sucesso btn-right btn-big form-controlado" type="submit">CADASTRAR</button>
+		<br>
+		<p class="alert alert-info"> Revise as informações e tenha certeza do que será cadastrado. Obrigado!</p>
+		<button class="btn btn-success btn-right btn-big form-controlado" type="submit">CADASTRAR</button>
 		<div class="clear"></div>
 		</form>
 		<?php } ?>
 	</div>
+	<br>
 </body>
 </html>

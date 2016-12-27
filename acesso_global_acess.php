@@ -7,6 +7,7 @@
 	<!-- Header -->
 	<?php include('views/header.php') ?>
 	<div class="container main">
+		<?php include("views/erro.php");?>
 		<input type="text" id="pesquisa-geral" class="form-control" onkeyup="procurar();" placeholder="Pesquisa Geral">
 		<div class="table-responsive">
 			<table id="data" class="table table-bordered texto-centralizado table-blue table-hover">

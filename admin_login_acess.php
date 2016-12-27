@@ -73,22 +73,7 @@
 			</tr>
 			<tr>
 				<td>Deletar Lista</td>
-				<form action="sistema/admin/deletar_lista.php">
-					<td>
-						<select required name="idLista" required>
-						<?php 
-							$select_l = BuscaListaid($conexao);
-							while($listas = mysqli_fetch_assoc($select_l)){
-						?>
-								<!-- Saiu do php -->
-								<option value="<?= $listas['id'];?>"><?= $listas['id'];?></option>
-						<?php
-							}
-						 ?>
-						</select>
-						<td><button class="btn btn-perigo">Deletar</button></td>
-					</td>
-				</form>	
+				<td colspan="2"><a href="admin_login_lista_deleta.php"><button class="btn btn-perigo form-control">Escolher Qual Deletar</button></a></td>
 			</tr>
 		</table>
 		<br>

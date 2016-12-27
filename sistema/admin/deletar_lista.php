@@ -1,12 +1,15 @@
 <?php  
-include("conexao-admin.php");
+	include("conexao-admin.php");
 
-$id = $_GET['idLista'];
-
-if(ResetarLista($conexao,$id))
-{
-	header("location:../../admin_login_acess.php?erro-sucesso");
-}else{
-	header("location:../../admin_login_acess.php?erro");
-}
+	$array_lista = $_GET['l'];
+	var_dump($array_lista);
+	try {
+		foreach($array_lista as $array_l){
+		ResetarLista($conexao,$array_l);
+		}
+		header("location:../../admin_login_lista_deleta.php?erro-sucesso");
+	} catch (Exception $e) {
+		header("location:../../admin_login_lista_deleta.php?erro");
+	}
+	
 ?>

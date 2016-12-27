@@ -1,0 +1,2 @@
+LOGIN = Bilheteria se logou no dia  18.12.16 às 13:13:12
+LOGIN = PDV se logou no dia  18.12.16 às 13:14:47

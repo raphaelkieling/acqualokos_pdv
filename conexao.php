@@ -85,7 +85,7 @@ function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$
 function MostrarRevendedores($conexao)
 {
 	// Mostra os nomes dos revendedores na tela de login e ciração de listas com o id vinculado
-	$sql = "SELECT * from banco_nomes_revendedor";
+	$sql = "SELECT * from banco_nomes_revendedor order by nome";
 	return mysqli_query($conexao,$sql);
 }
 //FIM revendedor acesso

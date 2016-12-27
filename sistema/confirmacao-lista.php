@@ -10,6 +10,9 @@
 			confimarListaRevendedor($conexao,$id,$lista_id,$i);
 			//echo "<br>Enviado";
 		}
+		$file_log = fopen("admin/sistema.txt","a");
+		$escreve = fwrite($file_log,"REVENDEDOR = Revendedor confirmou a lista ".$lista_id." em ". $data." às ".$hora.PHP_EOL);
+		fclose($file_log);
 		header("location:../revendedor_login_acess.php?erro-sucesso-revendedor");
 	}else{
 		
