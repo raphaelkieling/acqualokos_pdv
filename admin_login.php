@@ -11,7 +11,7 @@
 			<img src="img/logo-admin.png" alt="">
 			<form action="controller-login.php" method="post">
 				<input type="password" name="admin_senha" class="form-controlado" placeholder="Senha do desenvolvedor">
-				<button class="btn btn-sucesso form-controlado">Acessar</button>
+				<button class="btn btn-success form-controlado">Acessar</button>
 			</form>
 		</div>
 	</div>

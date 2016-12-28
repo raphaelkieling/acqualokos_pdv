@@ -30,7 +30,7 @@
 				include("views/tabela_pesquisa.php");
 			}
 			?>
-		</table>
+			</table>
 		</div>
 		<script src="jquery-3.1.1.js"></script>
 		<script>

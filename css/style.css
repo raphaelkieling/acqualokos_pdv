@@ -4,10 +4,6 @@
 	margin: 0px;
 	font-family: 'Questrial', sans-serif;
 }
-.container{
-	width: 60%;
-	margin:0 auto;
-}
 h1{
 	color:#287596;
 	font-weight: normal;
@@ -117,11 +113,12 @@ nav ul li i,nav ul li ul li i{
 	padding-top:5px;
 }
 /*Tabela*/
+.panel-heading{
+	background: #3498db !important;
+	color:white !important;
+}
 table{
 	width: 100%;
-	margin-top: 20px;
-	padding: 10px;
-	border-top:solid 1px #3498db;
 }
 table td{
 	font-size: 18px;
@@ -132,15 +129,6 @@ table input,table select{
 td img{
 	margin-top: 20px;
 	width: 150px;
-}
-.table-hover tr:hover{
-	background: #f2f2f2;
-	cursor: pointer;
-}
-.table-blue th{
-	background: #3498db;
-	color:white;
-	padding: 5px;
 }
 /*Final tabela*/
 /*Login revendedor*/

@@ -15,7 +15,7 @@
 		<td><small><?= $dados['nomer']?></small></td>
 		<td><small><?= $dados['data']?></small></td>
 		<td><small><?= $dados['veio']?></small></td>
-		<td><a href="sistema/addVinda.php?id=<?= $dados['id']?>&&veio=<?= $dados['veio']?>"><img class="addVeio" src="img/add.png" alt="adicionar vindas"></a></td>
+		<td><a href="sistema/addVinda.php?id=<?= $dados['id']?>&&veio=<?= $dados['veio']?>"><img class="addVeio" src="img/add.png" style="width: 35px;" alt="adicionar vindas"></a></td>
 	</tr>
 <?php 
 	}
