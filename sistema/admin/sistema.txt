@@ -460,3 +460,143 @@ REVENDEDOR = Revendedor confirmou a lista 41 em 27.12.16 às 18:32:57
 ACQUALOKOS = Acqualokos confirmou a lita 41 em 27.12.16 às 18:33:06
 ACQUALOKOS = Acqualokos confirmou a lita 42 em 27.12.16 às 18:33:09
 LOGIN = Bilheteria se logou no dia  27.12.16 às 18:36:08
+LOGIN = PDV se logou no dia  28.12.16 às 14:06:18
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:06:31
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:06:31
+PDV = Criou funcionario = 312 - 28/12/2016 às 14:06:31
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:06:39 ip - ::1
+LOGIN = PDV se logou no dia  28.12.16 às 14:07:01
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:07:11
+PDV = Criou funcionario = 321 - 28/12/2016 às 14:07:11
+PDV = Criou funcionario = 321 - 28/12/2016 às 14:07:11
+PDV = Criou funcionario = 213 - 28/12/2016 às 14:07:11
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 14:07:18 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:07:27 ip - ::1
+LOGIN = Acqua Lokos se logou no dia  28.12.16 às 14:30:33 ip - ::1
+LOGIN = PDV se logou no dia  28.12.16 às 14:31:09
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:31:19
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:31:19
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:31:19
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:31:19
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:31:28
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:31:42 ip - ::1
+LOGIN = PDV se logou no dia  28.12.16 às 14:32:04
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 primeiro - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:29
+PDV = Criou funcionario = 123 ultimo - 28/12/2016 às 14:32:29
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 primeiro - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 - 28/12/2016 às 14:32:35
+PDV = Criou funcionario = 123 ultimo - 28/12/2016 às 14:32:35
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:32:42 ip - ::1
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 14:32:53 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:38:03 ip - ::1
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 14:38:12 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 46 em 28.12.16 às 14:38:15
+LOGIN = PDV se logou no dia  28.12.16 às 14:41:42
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 14:41:50
+PDV = Criou funcionario = glyphicon glyphicon-dashboard - 28/12/2016 às 14:41:50
+PDV = Criou funcionario = glyphicon glyphicon-dashboard - 28/12/2016 às 14:41:50
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 14:41:57 ip - ::1
+ACQUALOKOS = Acqualokos confirmou a lita 46 em 28.12.16 às 14:52:21
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:53:52 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 45 em 28.12.16 às 14:53:55
+ACQUALOKOS = Acqualokos confirmou a lita 45 em 28.12.16 às 14:54:06
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 14:54:14 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 47 em 28.12.16 às 14:59:22
+ACQUALOKOS = Acqualokos confirmou a lita 47 em 28.12.16 às 15:00:29
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 15:01:51 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 48 em 28.12.16 às 15:01:54
+ACQUALOKOS = Acqualokos confirmou a lita 48 em 28.12.16 às 15:01:59
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 15:02:09 ip - ::1
+LOGIN = PDV se logou no dia  28.12.16 às 15:05:51
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 15:06:02
+PDV = Criou funcionario = $listas['p_venda'] - 28/12/2016 às 15:06:02
+PDV = Criou funcionario = $listas['p_venda'] - 28/12/2016 às 15:06:02
+PDV = Criou funcionario = $listas['p_venda'] - 28/12/2016 às 15:06:02
+PDV = Criou funcionario = $listas['p_venda'] - 28/12/2016 às 15:06:02
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 15:06:09 ip - ::1
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 15:06:54
+PDV = Criou funcionario = Evite usar - 28/12/2016 às 15:06:54
+PDV = Criou funcionario = Evite usar - 28/12/2016 às 15:06:54
+PDV = Criou funcionario = Evite usar - 28/12/2016 às 15:06:54
+PDV = Criou funcionario = Evite usar uli - 28/12/2016 às 15:06:54
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 15:07:03 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 49 em 28.12.16 às 15:07:14
+ACQUALOKOS = Acqualokos confirmou a lita 49 em 28.12.16 às 15:07:22
+LOGIN = PDV se logou no dia  28.12.16 às 15:07:59
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 15:08:09
+PDV = Criou funcionario = Evite usar - 28/12/2016 às 15:08:09
+PDV = Criou funcionario = Evite usar - 28/12/2016 às 15:08:09
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 15:10:14 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 50 em 28.12.16 às 15:10:26
+ACQUALOKOS = Acqualokos confirmou a lita 50 em 28.12.16 às 15:10:31
+LOGIN = PDV se logou no dia  28.12.16 às 15:15:33
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 15:15:42
+PDV = Criou funcionario = 321 - 28/12/2016 às 15:15:42
+PDV = Criou funcionario = 132 - 28/12/2016 às 15:15:42
+LOGIN = Revendedor 22 se logou no dia  28.12.16 às 15:15:50 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 51 em 28.12.16 às 15:15:54
+ACQUALOKOS = Acqualokos confirmou a lita 51 em 28.12.16 às 15:16:10
+LOGIN = Bilheteria se logou no dia  28.12.16 às 17:25:03
+LOGIN = PDV se logou no dia  28.12.16 às 17:25:30
+PDV = Ponto de venda criou uma lista em 28/12/2016 às 17:25:44
+PDV = Criou funcionario = adssdadsa - 28/12/2016 às 17:25:44
+PDV = Criou funcionario = asfryhtds - 28/12/2016 às 17:25:44
+PDV = Criou funcionario = fasdfafsaff - 28/12/2016 às 17:25:44
+LOGIN = Revendedor 23 se logou no dia  28.12.16 às 17:25:51 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 52 em 28.12.16 às 17:25:54
+ACQUALOKOS = Acqualokos confirmou a lita 52 em 28.12.16 às 17:26:00
+LOGIN = Bilheteria se logou no dia  28.12.16 às 17:26:07
+LOGIN = Revendedor 23 se logou no dia  29.12.16 às 19:19:47 ip - 127.0.0.1
+LOGIN = Acqua Lokos se logou no dia  29.12.16 às 20:00:19 ip - ::1
+LOGIN = PDV se logou no dia  29.12.16 às 20:05:50
+PDV = Ponto de venda criou uma lista em 29/12/2016 às 20:06:00
+PDV = Criou funcionario = 213 - 29/12/2016 às 20:06:00
+PDV = Criou funcionario = 312 - 29/12/2016 às 20:06:00
+PDV = Criou funcionario = 312 - 29/12/2016 às 20:06:00
+PDV = Criou funcionario = 132 - 29/12/2016 às 20:06:00
+LOGIN = Revendedor 23 se logou no dia  29.12.16 às 20:06:08 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 53 em 29.12.16 às 20:06:12
+LOGIN = PDV se logou no dia  29.12.16 às 20:53:33
+PDV = Ponto de venda criou uma lista em 29/12/2016 às 20:53:44
+PDV = Criou funcionario = 321312312 - 29/12/2016 às 20:53:44
+PDV = Criou funcionario = 321321321 - 29/12/2016 às 20:53:44
+PDV = Criou funcionario = 321321 - 29/12/2016 às 20:53:44
+ACQUALOKOS = Acqualokos confirmou a lita 53 em 29.12.16 às 20:55:39
+REVENDEDOR = Revendedor confirmou a lista 54 em 29.12.16 às 20:55:50
+ACQUALOKOS = Acqualokos confirmou a lita 54 em 29.12.16 às 20:56:01
+LOGIN = PDV se logou no dia  29.12.16 às 21:03:33
+PDV = Ponto de venda criou uma lista em 29/12/2016 às 21:03:41
+PDV = Criou funcionario = 231 - 29/12/2016 às 21:03:41
+PDV = Criou funcionario = 321 - 29/12/2016 às 21:03:41
+PDV = Criou funcionario = 321 - 29/12/2016 às 21:03:41
+REVENDEDOR = Revendedor confirmou a lista 55 em 29.12.16 às 21:06:51
+LOGIN = Acqua Lokos se logou no dia  31.12.16 às 12:41:57 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  31.12.16 às 12:49:34 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  31.12.16 às 13:16:26 ip - ::1

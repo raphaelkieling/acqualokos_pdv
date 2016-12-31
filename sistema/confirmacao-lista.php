@@ -7,7 +7,7 @@
 	var_dump($lista_id);
 	if(!count($id)<=0){
 		for($i=0;$i<count($id);$i++){
-			confimarListaRevendedor($conexao,$id,$lista_id,$i);
+			confirmarListaRevendedor($conexao,$id,$lista_id,$i);
 		}
 		
 		$file_log = fopen("admin/sistema.txt","a");

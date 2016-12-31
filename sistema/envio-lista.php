@@ -26,7 +26,7 @@
 		}
 	}
 
-	if(PegarIdUltimo($conexao)==1){
+	if(PegarIdUltimo($conexao)==1){ //verifica se já foi posto alguma lista na tabela listas
 		ListaUsada($conexao,$revendedor,$pontoVenda);
 		$pego = true;
 	}
@@ -45,6 +45,7 @@
 				InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
 			}
 		}
+
 		if($pego != true){
 			ListaUsada($conexao,$revendedor,$pontoVenda);
 		}

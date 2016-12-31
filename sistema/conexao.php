@@ -21,8 +21,8 @@ function logar($conexao,$senha,$tipo){
 	}else{
 		return false;
 	}
-
 }
+
 function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 	// Loga com o revendedor pegando a senha , o id e o tipo para verificar se ele realmente é revendedor
 	$sql = "SELECT * from banco_senhas where revendedor=$revendedor and senha='$senha' and tipo_entrada=$tipo";
@@ -51,11 +51,11 @@ function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 //Final do LOGAR no site
 
 //REVENDEDOR acesso
-function confimarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista que foi enviada para o revendedor
+function confirmarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista que foi enviada para o revendedor
 	$sql = "insert into banco_acqualokos (nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id)SELECT nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id from banco_revendedor where id=$id[$i]";
 	if(mysqli_query($conexao,$sql))
 	{
-					echo $sql;
+		echo $sql;
 		if(mysqli_query($conexao,"delete from banco_revendedor where id=$id[$i]"))
 		{
 			return true;
@@ -96,13 +96,37 @@ function MostrarRevendedores($conexao)
 //FIM revendedor acesso
 
 //ACQUA LOKOS acesso
+function NotificacaoAcqua($conexao)
+{
+	$esperando  = 0;
+	$aceita     = 0;
+
+	$sql = "select count(*) from banco_id_listas where status=0";
+	$select = mysqli_query($conexao,$sql);
+	while($sl = mysqli_fetch_assoc($select))
+	{
+		$esperando = $sl['count(*)'];
+	}
+
+	$sql_u = "select count(*) from banco_id_listas where status=1";
+	$select_u = mysqli_query($conexao,$sql_u);
+	while($sl_u = mysqli_fetch_assoc($select_u))
+	{
+		$aceita = $sl_u['count(*)'];
+	}
+	$notifica = array(
+		"esperando" => $esperando,
+		"aceita"    =>$aceita
+	);
+	return $notifica;
+}
 function BuscaListaAcqua($conexao,$lista_id){
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
 	$sql = "SELECT banco_acqualokos.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_acqualokos join banco_nomes_revendedor on banco_acqualokos.revendedor = banco_nomes_revendedor.id where lista_id=$lista_id";
 	return mysqli_query($conexao,$sql);
 }
-function confimarListaAcqua($conexao,$id,$lista_id,$i){
+function confirmarListaAcqua($conexao,$id,$lista_id,$i){
 	//Confirma a lista de acqua lokos
 	$sql = "INSERT INTO banco_global(nome,documento,ponto_venda,localidade,responsavel,revendedor,data) SELECT nome,documento,ponto_venda,localidade,responsavel,revendedor,data from banco_acqualokos where id= $id[$i] and lista_id= $lista_id";
 
@@ -129,7 +153,7 @@ function BuscaListaGlobal($conexao)
 }
 function BuscaListaGlobalPalavra($conexao,$palavra)
 {
-	return mysqli_query($conexao,"SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' ORDER BY banco_global.data desc limit 10");
+	return mysqli_query($conexao,"SELECT banco_global.*,banco_global.ponto_venda, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' or banco_global.ponto_venda like '%$palavra%' ORDER BY banco_global.data desc limit 10");
 
 }
 function addVeio($conexao,$id,$veio)
@@ -145,14 +169,29 @@ function addVeio($conexao,$id,$veio)
 // fim GLOBAL
 
 //listas para dividir sessões.
-function ListaUsada($conexao,$revendedor,$pontoVenda){
-	if(mysqli_query($conexao,"insert into banco_id_listas(lista,revendedor,p_venda) values('usado','$revendedor','$pontoVenda')"))
+function ListaUsada($conexao,$revendedor,$pontoVenda)
+{
+	// Insere a lista no banco de dados para ser visivel tanto para o acqua quando para o revendedor
+	$sql = "insert into banco_id_listas(lista,revendedor,p_venda,status) values('usado','$revendedor','$pontoVenda','0')";
+	if(mysqli_query($conexao,$sql))
 	{
 		return true;
 	}else{
 		return false;
 	}
 }
+
+function ListaStatusConfirmada($conexao,$id_lista)
+{
+	$sql = "UPDATE `banco_id_listas` set status=1 WHERE id=$id_lista";
+	if(mysqli_query($conexao,$sql))
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function PegarIdUltimo($conexao)
 {
 	//pega o ultimo id que foi usado na tabela banco_id_listas e coloca em uma variavel

@@ -21,7 +21,7 @@
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title"><span class=" glyphicon glyphicon-list-alt text-left form-inline" arial-hidden="true"></span><center>Lista <?= $listas['id'] ?> - <?= $listas['p_venda'] ?></center></h1>
+				<h1 class="panel-title"><span class=" glyphicon glyphicon-list-alt text-left form-inline" arial-hidden="true"></span><center>Lista <?= $listas['id'] ?> - <?= $listas['revendedor'] ?> -  <?= $listas['p_venda'] ?></center></h1>
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
@@ -69,9 +69,11 @@
 		</div>
 	<script src="jquery-3.1.1.js"></script>
 	<script>
-		$(".img-aguardo").click(function(){
+
+		$(".aguardo").click(function(){
 			alert("Quando esta imagem aparecer significa que o acqua lokos está verificando sua lista");
 		});
+
 	</script>
 </body>
 </html>
