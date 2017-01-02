@@ -8,7 +8,7 @@
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<center><h1>Login Acqua Lokos</h1></center>
-		<div class="login-acesso">
+		<div class="login-acesso col-md-5">
 			<img src="img/logo-revendedor.png" alt="">
 			<form action="controller-login.php" method="post">
 				<input type="password" name="acqua_senha" class="form-controlado" placeholder="Senha Acqua Lokos">

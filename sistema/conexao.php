@@ -141,7 +141,6 @@ function confirmarListaAcqua($conexao,$id,$lista_id,$i){
 	
 }
 //FIM acqualokoso acesso
-
 //GLOBAL
 function BuscaListaGlobal($conexao)
 {
@@ -234,5 +233,16 @@ function BuscaLista($conexao,$sessao_revendedor,$lista_id)
 	//Busca pela sessão
 	return mysqli_query($conexao,"SELECT banco_revendedor.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_revendedor join banco_nomes_revendedor on banco_revendedor.revendedor = banco_nomes_revendedor.id where revendedor=$sessao_revendedor and lista_id=$lista_id");
 }
-
+//Sistema de INDEX
+function procurarDocumentoIndex($conexao,$documento)
+{
+	$select = mysqli_query($conexao,"select * from banco_global where documento=$documento");
+	if(mysqli_fetch_row($select) > 0)
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+//FIM index
 ?>

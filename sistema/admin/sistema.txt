@@ -602,3 +602,4 @@ LOGIN = Revendedor 23 se logou no dia  31.12.16 às 12:49:34 ip - ::1
 LOGIN = Revendedor 23 se logou no dia  31.12.16 às 13:16:26 ip - ::1
 LOGIN = Revendedor 23 se logou no dia  01.01.17 às 15:11:21 ip - ::1
 REVENDEDOR = Revendedor confirmou a lista 56 em 01.01.17 às 17:38:05
+LOGIN = Bilheteria se logou no dia  02.01.17 às 18:39:14

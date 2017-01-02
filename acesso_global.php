@@ -8,7 +8,7 @@
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<center><h1>Login Bilheteria</h1></center>
-		<div class="login-acesso">
+		<div class="login-acesso col-md-5">
 			<img src="img/logo-bilheteria.png" alt="">
 			<form action="controller-login.php" method="post">
 				<input type="password" name="global_senha" class="form-controlado" placeholder="Senha global">

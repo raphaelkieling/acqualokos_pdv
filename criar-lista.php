@@ -7,7 +7,7 @@
 	<?php include('views/header.php');?>
 	<div class="container main">
 		<?php include("views/erro.php");?>
-		<div class="login-acesso">
+		<div class="login-acesso col-md-5">
 			<img src="img/logo-lista.png" alt="">
 			<form action="controller-login.php" method="post">
 				<input type="password" name="lista_senha" class="form-controlado" placeholder="Senha do Ponto de Venda">

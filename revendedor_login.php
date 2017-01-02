@@ -7,7 +7,7 @@
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<center><h1>Login Revendedor</h1></center>
-		<div class="login-acesso">
+		<div class="login-acesso col-md-5">
 			<img src="img/logo-acqua.png" >
 			<form action="controller-login.php" method="post">
 				<select name="revendedor_nome" class="form-controlado">
