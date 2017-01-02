@@ -133,7 +133,7 @@ td img{
 /*Final tabela*/
 /*Login revendedor*/
 .login-acesso{
-	width: 450px;
+	float:none;
 	margin:0 auto;
 	margin-top: 50px;
 	text-align: center;
