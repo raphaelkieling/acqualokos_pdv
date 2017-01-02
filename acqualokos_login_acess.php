@@ -11,16 +11,16 @@
 		<br><br>
 		<h1 class="text-center">Revisão de Pontos de Venda para Confirmação</h1>
 		<!-- BADGES notificação para os revendedores -->
-			<?php  $notificacao = NotificacaoAcqua($conexao); ?>
-			<div class="row">
-				<div class="col-md-2">
-					Esperando <span class="badge"><?= $notificacao['esperando']?></span>
-				</div>
-				<div class="col-md-2">
-					Aceitas <span class="badge"><?= $notificacao['aceita']?></span>
-				</div>
+		<?php  $notificacao = NotificacaoAcqua($conexao); ?>
+		<div class="row">
+			<div class="col-md-2">
+				<button class="btn btn-default">Esperando <span class="badge"><?= $notificacao['esperando']?></span></button>
 			</div>
-			<br>
+			<div class="col-md-2">
+				<button class="btn btn-default">Aceitas <span class="badge"><?= $notificacao['aceita']?></span></span></button>			
+			</div>
+		</div>
+		<br>
 		<!-- Fim Notificacoes -->
 		<?php 
 			$contador_lista = 0;

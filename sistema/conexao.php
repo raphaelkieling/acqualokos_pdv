@@ -1,12 +1,12 @@
 <?php
-	date_default_timezone_get('America/Sao_Paulo');
 	$ip = getenv("REMOTE_ADDR");
+	date_default_timezone_get('America/Sao_Paulo');
+	
 	$data = date("d.m.y");
 	$hora = date("H:i:s"); 
 
 	//configuração geral
 	include("database.php");
-	date_default_timezone_set('America/Sao_Paulo');
 //LOGAR no site
 function logar($conexao,$senha,$tipo){ 
 	// Loga qualquer menos o revendedor pois o revendedor precisa de ID diferente

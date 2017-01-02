@@ -600,3 +600,5 @@ REVENDEDOR = Revendedor confirmou a lista 55 em 29.12.16 às 21:06:51
 LOGIN = Acqua Lokos se logou no dia  31.12.16 às 12:41:57 ip - ::1
 LOGIN = Revendedor 23 se logou no dia  31.12.16 às 12:49:34 ip - ::1
 LOGIN = Revendedor 23 se logou no dia  31.12.16 às 13:16:26 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  01.01.17 às 15:11:21 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 56 em 01.01.17 às 17:38:05
