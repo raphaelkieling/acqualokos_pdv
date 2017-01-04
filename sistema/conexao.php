@@ -100,6 +100,7 @@ function NotificacaoAcqua($conexao)
 {
 	$esperando  = 0;
 	$aceita     = 0;
+	$cancelado  = 0;
 
 	$sql = "select count(*) from banco_id_listas where status=0";
 	$select = mysqli_query($conexao,$sql);
@@ -114,9 +115,18 @@ function NotificacaoAcqua($conexao)
 	{
 		$aceita = $sl_u['count(*)'];
 	}
+
+	$sql_c = "select count(*) from banco_id_listas where status=2";
+	$select_c = mysqli_query($conexao,$sql_c);
+	while($sl_c = mysqli_fetch_assoc($select_c))
+	{
+		$cancelado = $sl_c['count(*)'];
+	}
+
 	$notifica = array(
 		"esperando" => $esperando,
-		"aceita"    =>$aceita
+		"aceita"    =>$aceita,
+		"cancelado" =>$cancelado
 	);
 	return $notifica;
 }

@@ -19,6 +19,9 @@
 			<div class="col-md-2">
 				<button class="btn btn-default">Aceitas <span class="badge"><?= $notificacao['aceita']?></span></span></button>			
 			</div>
+			<div class="col-md-2">
+				<button class="btn btn-default">Canceladas <span class="badge"><?= $notificacao['cancelado']?></span></span></button>			
+			</div>
 		</div>
 		<br>
 		<!-- Fim Notificacoes -->
