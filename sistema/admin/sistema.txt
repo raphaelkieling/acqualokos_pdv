@@ -663,3 +663,11 @@ LOGIN = PDV se logou no dia  04.01.17 às 20:05:47
 LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:08:28 ip - ::1
 REVENDEDOR = Revendedor confirmou a lista 65 em 04.01.17 às 20:08:32
 LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:08:51 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 20:18:00
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 213 - 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 321 - 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 321 - 04/01/2017 às 20:18:07
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 20:18:14 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 66 em 04.01.17 às 20:18:20
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 20:18:49 ip - ::1
