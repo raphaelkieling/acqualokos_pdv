@@ -13,23 +13,24 @@ include('views/head.php')
 	<!-- Header -->
 	<div class="container main">
 		<?php include("views/erro.php");?>
-		<h1><center>Trabalha conosco?</center></h1>
+		<h1><center>Sistema Acqua Lokos Listas</center></h1>
 		<div class="row">
 			<div class="login-acesso col-md-5">
 				<img src="img/logo-acqua-lokos.png" alt="">
-				<h4><center>Adquira seu url e senha com o acqua lokos</center></h4>
 				<!-- <input type="password" name="senha_total" class="form-controlado" placeholder="Senha" readonly> -->
 				<!-- <button class="btn btn-sucesso form-controlado">Acessar</button> -->
 
 				<br><br>
-				<center>Quer vir aproveitar? Verifique se você já foi aceito!</center>
-				<div class="alert alert-warning">
+				<center><h4>Quer vir aproveitar? Verifique se você já foi aceito!</h4></center>
+				<h5>Leia atentamente antes de verificar</h5>
+				<div class="alert alert-info">
 					<p>
-						Coloque CPF - RG. Caso não tenha cadastrado um desses documentos não é possível fazer a verificação, pois apenas estes são números únicos. 
+						Coloque <b>CPF - RG</b>. Caso não tenha cadastrado um desses documentos não é possível fazer a verificação, pois apenas estes são números únicos. 
 					</p>
 					<p>
-						NOMES NÃO são verificados, pois podem ocorrer falhas ortográficas por parte do cadastrante.
+						<b>NOMES NÃO</b> são verificados, pois podem ocorrer falhas ortográficas por parte do cadastrante.
 					</p>
+					<p><b>IMPORTANTE! </b>- Caso seu CPF ou RG conste no sistema, não quer dizer definitivamente que você pode entrar no parque e sim que o documento está cadastrado. Pode ocorrer no momento que o ponto de venda cadastre de forma errada o nome de outra pessoa e o seu documento. PASSE na bilheteria do mesmo jeito para poder entrar e confirmar seu cadastro.</p>
 				</div>
 				<form action="sistema/procurarDocumento.php">
 					<div class="row">
@@ -38,7 +39,7 @@ include('views/head.php')
 
 						</div>
 						<div class="col-md-11 col-xs-10">
-							<input type="text" class="form-control" name="documento" id="documento" placeholder="CPF - RG">
+							<input type="text" class="form-control" name="documento" id="documento" placeholder="Digite seu CPF ou RG">
 						</div>
 					</div>
 					<button class="btn btn-warning form-control">Verificar Disponibilidade</button>
@@ -66,7 +67,9 @@ include('views/head.php')
 							<p>Desculpa, mas teu CPF ou RG não consta no sistema. :(</p>
 							<p>Aguarde a confirmação do Revendedor!</p>
 						</div>
-					<?php }else{} ?>
+					<?php }else{?>
+							<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<?php } ?>
 				</form>
 			</div>
 		</div>
