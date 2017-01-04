@@ -190,6 +190,19 @@ function ListaStatusConfirmada($conexao,$id_lista)
 		return false;
 	}
 }
+function ListaStatusCancelada($conexao,$id_lista)
+{
+	// 0 Pendente
+	// 1 Confirmada
+	// 2 Cancelada
+	$sql = "UPDATE `banco_id_listas` set status=2 WHERE id=$id_lista";
+	if(mysqli_query($conexao,$sql))
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
 
 function PegarIdUltimo($conexao)
 {
