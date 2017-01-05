@@ -2,7 +2,6 @@
 	include('sistema/verificar_login_bilheteria.php');
 	include('views/head.php') 
 	?>
-
 <body>
 	<!-- Header -->
 	<?php include('views/header.php') ?>
