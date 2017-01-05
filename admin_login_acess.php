@@ -16,7 +16,7 @@
 	<div class="container main">
 		<?php include("views/erro.php");?>
 		<br><br>
-		<h1><center>Administrador</center></h1>
+		<h1><center>Administrador 2.0</center></h1>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="panel-title">Revendedor</h1>
