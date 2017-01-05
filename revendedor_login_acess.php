@@ -19,7 +19,7 @@
 			while($listas = mysqli_fetch_assoc($select_l)){
 				$contador_lista++;
 		?>
-		<div class="panel panel-default">
+		<div id="<?= $listas['id'] ?>" class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="panel-title"><span class=" glyphicon glyphicon-list-alt text-left form-inline" arial-hidden="true"></span><center>Lista <?= $listas['id'] ?> - <?= $listas['revendedor'] ?> -  <?= $listas['p_venda'] ?></center></h1>
 			</div>
@@ -41,10 +41,12 @@
 						<?php
 						$contador_dados =0;
 						$select = BuscaLista($conexao,$id_revendedor,$listas['id']);
-						while($dados = mysqli_fetch_assoc($select))
-						{
-							$contador_dados++;
-							include("views/tabela.php");
+						if($listas['status']!=2){
+							while($dados = mysqli_fetch_assoc($select))
+							{
+								$contador_dados++;
+								include("views/tabela.php");					
+							}
 						}
 						if($contador_dados<=0){
 							include("views/aguardo.php");
@@ -55,6 +57,7 @@
 			</div>
 			<div class="panel-footer">
 				<button type="submit" class="btn btn-success btn-big form-controlado">Aceitar Lista</button>
+				<div onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger form-control">Cancelar</button></div>
 			</div>	
 				</form>
 			</div> <!-- panel -->
@@ -73,7 +76,22 @@
 		$(".aguardo").click(function(){
 			alert("Quando esta imagem aparecer significa que o acqua lokos está verificando sua lista");
 		});
-
+		function btnCancela(numero){
+			var numeroLista = numero;
+			if(prompt("Digite APAGAR se quiser cancelar a lista "+numeroLista) == "APAGAR")
+			{
+				$.ajax({
+					type:'GET',
+					url:'sistema/cancelaLista.php',
+					data:{lista:numeroLista},
+					success:function(retorno){
+						$('#'+numeroLista).animate({opacity:0.25},300,function(){
+							$(this).remove();
+						});
+					}
+				});
+			}
+		}
 	</script>
 </body>
 </html>

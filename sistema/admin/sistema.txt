@@ -603,3 +603,71 @@ LOGIN = Revendedor 23 se logou no dia  31.12.16 às 13:16:26 ip - ::1
 LOGIN = Revendedor 23 se logou no dia  01.01.17 às 15:11:21 ip - ::1
 REVENDEDOR = Revendedor confirmou a lista 56 em 01.01.17 às 17:38:05
 LOGIN = Bilheteria se logou no dia  02.01.17 às 18:39:14
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 18:49:23 ip - ::1
+LOGIN = Acqua Lokos se logou no dia  04.01.17 às 18:49:48 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 18:49:54
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+PDV = Criou funcionario = 312321213 - 04/01/2017 às 18:50:09
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 18:50:25 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 19:39:12
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:39:21
+PDV = Criou funcionario = sda - 04/01/2017 às 19:39:21
+PDV = Criou funcionario = sad - 04/01/2017 às 19:39:21
+PDV = Criou funcionario = dsa - 04/01/2017 às 19:39:21
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:39:28
+PDV = Criou funcionario = sda - 04/01/2017 às 19:39:28
+PDV = Criou funcionario = sad - 04/01/2017 às 19:39:28
+PDV = Criou funcionario = dsa - 04/01/2017 às 19:39:28
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 19:39:45 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 60 em 04.01.17 às 19:51:09
+LOGIN = Revendedor 22 se logou no dia  04.01.17 às 19:51:30 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 19:52:47
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:53:02
+PDV = Criou funcionario = 213 - 04/01/2017 às 19:53:02
+PDV = Criou funcionario = 321 - 04/01/2017 às 19:53:02
+PDV = Criou funcionario = 213 - 04/01/2017 às 19:53:02
+PDV = Criou funcionario = 312 - 04/01/2017 às 19:53:02
+ACQUALOKOS = Acqualokos confirmou a lita 60 em 04.01.17 às 19:53:14
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 19:53:28 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 19:56:01
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:56:09
+PDV = Criou funcionario = asdsad - 04/01/2017 às 19:56:09
+PDV = Criou funcionario = dsa - 04/01/2017 às 19:56:09
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:56:14
+PDV = Criou funcionario = asdsad - 04/01/2017 às 19:56:14
+PDV = Criou funcionario = dsa - 04/01/2017 às 19:56:14
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 19:56:19
+PDV = Criou funcionario = asdsad - 04/01/2017 às 19:56:19
+PDV = Criou funcionario = dsa - 04/01/2017 às 19:56:19
+LOGIN = PDV se logou no dia  04.01.17 às 19:56:24
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 19:56:31 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 62 em 04.01.17 às 19:56:34
+ACQUALOKOS = Acqualokos confirmou a lita 62 em 04.01.17 às 19:56:45
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 19:57:41 ip - ::1
+LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:04:05 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 63 em 04.01.17 às 20:04:08
+LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:04:56 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 20:05:34
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 20:05:42
+PDV = Criou funcionario = 213 - 04/01/2017 às 20:05:42
+PDV = Criou funcionario = 321 - 04/01/2017 às 20:05:42
+PDV = Criou funcionario = 312 - 04/01/2017 às 20:05:42
+LOGIN = PDV se logou no dia  04.01.17 às 20:05:47
+LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:08:28 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 65 em 04.01.17 às 20:08:32
+LOGIN = Revendedor 22 se logou no dia  04.01.17 às 20:08:51 ip - ::1
+LOGIN = PDV se logou no dia  04.01.17 às 20:18:00
+PDV = Ponto de venda criou uma lista em 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 213 - 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 321 - 04/01/2017 às 20:18:07
+PDV = Criou funcionario = 321 - 04/01/2017 às 20:18:07
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 20:18:14 ip - ::1
+REVENDEDOR = Revendedor confirmou a lista 66 em 04.01.17 às 20:18:20
+LOGIN = Revendedor 23 se logou no dia  04.01.17 às 20:18:49 ip - ::1
