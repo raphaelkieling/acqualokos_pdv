@@ -14,6 +14,6 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 	<meta charset="UTF-8">
-	<title>Revendedores</title>
+	<title>PDV - Listas</title>
 </head>
 <?php  include("sistema/conexao.php"); ?>

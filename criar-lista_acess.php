@@ -12,7 +12,7 @@
 		<?php if(!isset($_GET['erro-sucesso-ponto-venda'])){?>
 		<br><br>
 		<form action="sistema/envio-lista.php" method="post">
-		<center><h1>Lista ponto de venda</h1></center>
+		<center><h1>Cadastro Ponto de Venda</h1></center>
 		<p class="alert alert-warning">Preencham corretamente todo o formulário. Evite usar caractéres especias como @ & ! ' " : {} )( += = * ¨ $ #. Pois dificultará tratar os dados posteriormente. </p>
 		<table>
 			<tr>

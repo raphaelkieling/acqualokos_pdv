@@ -4,10 +4,10 @@
 	</div>
 </header>
 
-<nav>
+<!-- <nav>
 	<div class="container">
 		<ul>
-			<!-- <li><a href="criar-lista.php"> <i class="fa fa-list" aria-hidden="true"></i>Ponto de Venda Lista </a></li>
+			<li><a href="criar-lista.php"> <i class="fa fa-list" aria-hidden="true"></i>Ponto de Venda Lista </a></li>
 			<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Acessos</a>
 					<ul>
 						<li><a class="muda" href="revendedor_login.php"><i class="fa fa-lock" aria-hidden="true"></i>Acesso Revendedor </a></li>
@@ -16,12 +16,12 @@
 					</ul>
 			</li>
 			<li><a href="acesso_global.php"> <i class="fa fa-filter" aria-hidden="true"></i>Filtragem Global </a></li>
-			<li><a href="acesso_global.php"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a></li> -->
+			<li><a href="acesso_global.php"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a></li>
 			<li><a href="index.php"> Sair <i class="fa fa-sign-out" aria-hidden="true" style="margin-left:10px;"></i> </a></li>
 			<div class="clear"></div>
 		</ul>
 	</div>
-</nav>
+</nav> -->
 
 
 	<script src="js/jquery-3.1.1.js"></script>
