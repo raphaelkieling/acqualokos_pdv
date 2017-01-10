@@ -4,8 +4,8 @@
 
 	$id = $_GET['id'];
 	$veio = $_GET['veio'];
-
-     Log_add($conexao,"Bilheteria","Visitou o parque = ".$id.". Veio = ".$veio+1,$data,$ip);
+    $tv = $veio +1;
+     var_dump(Log_add($conexao,"Bilheteria",$id." Visitou o parque ".$tv." vezes.",$data,$ip));
 	if(addVeio($conexao,$id,$veio)){
 		header("location:../acesso_global_acess.php");
 	}else{
