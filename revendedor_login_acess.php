@@ -56,6 +56,7 @@
 				</div>
 			</div>
 			<div class="panel-footer">
+			     <input type="text" name="revendedor" value="<?= $id_revendedor ?>" hidden>
 				<button type="submit" class="btn btn-success btn-big form-controlado">Aceitar Lista</button>
 				<div onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger form-control">Cancelar</button></div>
 			</div>	

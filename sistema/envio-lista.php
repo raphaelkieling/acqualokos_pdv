@@ -2,20 +2,13 @@
 	include("conexao.php");
 
 	$funcionarios = $_POST['n'];
-	$documentos = $_POST['d'];
-	
-	$pontoVenda= $_POST['pontoVenda'];
+	$documentos   = $_POST['d'];
+	$pontoVenda   = $_POST['pontoVenda'];
 	$localidade   = $_POST['localidade'];
-		
-	$responsavel= $_POST['responsavel'];
-	$revendedor = $_POST['revendedor'];
-		
-	$data            = date('d/m/Y');
-
-	$pego = false; 
-
-	$file_log = fopen("admin/sistema.txt","a");
-	$escreve = fwrite($file_log,"PDV = Ponto de venda criou uma lista em ". $data." às ".$hora.PHP_EOL);
+	$responsavel  = $_POST['responsavel'];
+	$revendedor   = $_POST['revendedor'];
+	$data         = date('d/m/Y');
+	$pego         = false; 
 
 	//contando o for para ver se tem funcionarios ou se nao foi mandando nenhum
 	$contador_funcionarios =0;
@@ -41,17 +34,19 @@
 				}else{
 					$lista_id = PegarIdUltimo($conexao);
 				}
-				$escreve = fwrite($file_log,"PDV = Criou funcionario = ".$funcionarios[$i]." - ". $data." às ".$hora.PHP_EOL);
-				InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i);
+				if(!InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i))
+                    {
+                        header("location:../criar-lista_acess.php?erro-lista");
+                        Log_add($conexao,"PDV","Erro ao enviar a lista ".$lista_id,$data,$ip);  
+                    }
 			}
 		}
+          Log_add($conexao,"PDV","Cadastrou a lista ".$lista_id." com ".$contador_funcionarios." funcionários",$data,$ip);
 
 		if($pego != true){
 			ListaUsada($conexao,$revendedor,$pontoVenda);
 		}
 	
-		
-		fclose($file_log);
 		
 		header("location:../criar-lista_acess.php?erro-sucesso-ponto-venda");
 

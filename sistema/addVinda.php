@@ -4,12 +4,9 @@
 
 	$id = $_GET['id'];
 	$veio = $_GET['veio'];
-	if(addVeio($conexao,$id,$veio)){
-		
-		$file_log = fopen("admin/sistema.txt","a");
-		$escreve = fwrite($file_log,"BILHETERIA = Funcionario ".$id." veio em ". $data." às ".$hora.PHP_EOL);
-		fclose($file_log);
 
+     Log_add($conexao,"Bilheteria","Visitou o parque = ".$id.". Veio = ".$veio+1,$data,$ip);
+	if(addVeio($conexao,$id,$veio)){
 		header("location:../acesso_global_acess.php");
 	}else{
 		header("location:../acesso_global_acess.php?erro");

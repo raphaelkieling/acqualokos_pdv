@@ -1,13 +1,14 @@
 <?php
-	$ip = getenv("REMOTE_ADDR");
-	date_default_timezone_get('America/Sao_Paulo');
-	
-	$data = date("d.m.y");
-	$hora = date("H:i:s"); 
+ $ip = getenv("REMOTE_ADDR");
+ date_default_timezone_get('America/Sao_Paulo');
 
-	//configuração geral
-	include("database.php");
-//LOGAR no site
+ $data = date("d.m.y");
+ $hora = date("H:i:s"); 
+
+ //configuração geral
+ include("database.php");
+
+//LOGAR
 function logar($conexao,$senha,$tipo){ 
 	// Loga qualquer menos o revendedor pois o revendedor precisa de ID diferente
 	$sql = "SELECT * from banco_senhas where  senha='$senha' and tipo_entrada=$tipo";
@@ -22,7 +23,6 @@ function logar($conexao,$senha,$tipo){
 		return false;
 	}
 }
-
 function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 	// Loga com o revendedor pegando a senha , o id e o tipo para verificar se ele realmente é revendedor
 	$sql = "SELECT * from banco_senhas where revendedor=$revendedor and senha='$senha' and tipo_entrada=$tipo";
@@ -38,19 +38,8 @@ function logarRevendedor($conexao,$revendedor,$senha,$tipo){
 	}
 
 }
-//Não é preciso pegar o revendedor só pela senha, pois se a senhas estiverem iguais vai dar problema.
-//function pegarRevendedor($conexao,$senha,$revendedor){
-//	$sql = "SELECT revendedor from banco_senhas where senha='$senha' and revendedor";
-//	if($SELECT = mysqli_query($conexao,$sql))
-//	{
-//		while($id_revendor = mysqli_fetch_assoc($SELECT)){
-//			return $id_revendor['revendedor'];
-//		}
-//	}	
-//}
-//Final do LOGAR no site
 
-//REVENDEDOR acesso
+//REVENDEDOR
 function confirmarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista que foi enviada para o revendedor
 	$sql = "insert into banco_acqualokos (nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id)SELECT nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id from banco_revendedor where id=$id[$i]";
 	if(mysqli_query($conexao,$sql))
@@ -87,17 +76,14 @@ function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$
 		return false;
 	}
 }
-function MostrarRevendedores($conexao)
-{
+function MostrarRevendedores($conexao){
 	// Mostra os nomes dos revendedores na tela de login e ciração de listas com o id vinculado
 	$sql = "SELECT * from banco_nomes_revendedor order by nome";
 	return mysqli_query($conexao,$sql);
 }
-//FIM revendedor acesso
 
-//ACQUA LOKOS acesso
-function NotificacaoAcqua($conexao)
-{
+//ACQUA LOKOS
+function NotificacaoAcqua($conexao){
 	$esperando  = 0;
 	$aceita     = 0;
 	$cancelado  = 0;
@@ -150,23 +136,21 @@ function confirmarListaAcqua($conexao,$id,$lista_id,$i){
 	}
 	
 }
-//FIM acqualokoso acesso
+
+
 //GLOBAL
-function BuscaListaGlobal($conexao)
-{
+function BuscaListaGlobal($conexao){
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
 	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc limit 10";
 	return mysqli_query($conexao,$sql);
 
 }
-function BuscaListaGlobalPalavra($conexao,$palavra)
-{
+function BuscaListaGlobalPalavra($conexao,$palavra){
 	return mysqli_query($conexao,"SELECT banco_global.*,banco_global.ponto_venda, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id where banco_global.nome like '%$palavra%' or banco_global.documento like '%$palavra%' or banco_nomes_revendedor.nome like '%$palavra%' or banco_global.ponto_venda like '%$palavra%' ORDER BY banco_global.data desc limit 10");
 
 }
-function addVeio($conexao,$id,$veio)
-{
+function addVeio($conexao,$id,$veio){
 	$veio +=1;
 	if(mysqli_query($conexao,"update banco_global set veio=$veio where id=$id"))
 	{
@@ -175,9 +159,9 @@ function addVeio($conexao,$id,$veio)
 		return false;
 	}
 }
-// fim GLOBAL
 
-//listas para dividir sessões.
+
+//LISTAS (que dividem as listas).
 function ListaUsada($conexao,$revendedor,$pontoVenda)
 {
 	// Insere a lista no banco de dados para ser visivel tanto para o acqua quando para o revendedor
@@ -267,5 +251,24 @@ function procurarDocumentoIndex($conexao,$documento)
 		return false;
 	}
 }
-//FIM index
+
+//LOG
+function Log_add($conexao,$nome,$descricao,$data,$ip){
+  $sql = "insert into banco_log(nome,descricao,data,ip) values('$nome','$descricao','$data','$ip')";
+  if(mysqli_query($conexao,$sql))
+  {
+    return true;
+  }else{
+    return false;
+  }
+  
+}
+function Log_view($conexao,$itensAtuais){
+  return mysqli_query($conexao,"select * from banco_log order by id desc limit $itensAtuais");
+}
+function Log_all($conexao){
+  $result = mysqli_query($conexao,"SELECT * FROM banco_log");
+  $num_rows = mysqli_num_rows($result); 
+  return $num_rows;
+}
 ?>

@@ -1,14 +1,10 @@
-LOGIN = Acqua Lokos se logou no dia  09.01.17 às 17:00:54 ip - ::1
-LOGIN = PDV se logou no dia  09.01.17 às 17:04:19
-PDV = Ponto de venda criou uma lista em 09/01/2017 às 17:04:31
-PDV = Criou funcionario = 213 - 09/01/2017 às 17:04:31
-PDV = Criou funcionario = 231 - 09/01/2017 às 17:04:31
-PDV = Ponto de venda criou uma lista em 09/01/2017 às 17:04:39
-PDV = Criou funcionario = 213231 - 09/01/2017 às 17:04:39
-PDV = Criou funcionario = 231231 - 09/01/2017 às 17:04:39
-PDV = Criou funcionario = 231231 - 09/01/2017 às 17:04:39
-PDV = Criou funcionario = 231 - 09/01/2017 às 17:04:39
-LOGIN = Revendedor 23 se logou no dia  09.01.17 às 17:04:54 ip - ::1
-REVENDEDOR = Revendedor confirmou a lista 68 em 09.01.17 às 17:05:00
-LOGIN = PDV se logou no dia  09.01.17 às 17:26:03
-LOGIN = Revendedor 23 se logou no dia  09.01.17 às 17:27:07 ip - ::1
+LOGIN = PDV se logou no dia  09.01.17 às 18:39:50
+LOGIN = Revendedor 22 se logou no dia  09.01.17 às 18:45:59 ip - ::1
+LOGIN = PDV se logou no dia  09.01.17 às 18:52:57
+LOGIN = Revendedor 23 se logou no dia  09.01.17 às 18:53:27 ip - ::1
+LOGIN = PDV se logou no dia  09.01.17 às 18:55:10
+LOGIN = Revendedor 22 se logou no dia  09.01.17 às 18:58:58 ip - ::1
+LOGIN = Revendedor 23 se logou no dia  09.01.17 às 18:59:06 ip - ::1
+LOGIN = PDV se logou no dia  09.01.17 às 18:59:33
+LOGIN = PDV se logou no dia  09.01.17 às 19:10:05
+LOGIN = PDV se logou no dia  09.01.17 às 21:04:13

@@ -13,6 +13,11 @@
 		<!-- BADGES notificação para os revendedores -->
 		<?php  $notificacao = NotificacaoAcqua($conexao); ?>
 		<div class="row">
+		    <div class="col-md-6">
+		     <form action="acqualokos_log.php">
+		        <button class="btn btn-warning btn-lg form-control">Log </button>
+		     </form>
+		    </div>
 			<div class="col-md-2">
 				<button class="btn btn-default">Esperando <span class="badge"><?= $notificacao['esperando']?></span></button>
 			</div>
