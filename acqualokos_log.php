@@ -7,7 +7,7 @@ if(isset($_GET['itensAtuais']))
 {
   $itensAtuais = $_GET['itensAtuais'];
 }else{
-  $itensAtuais = 2;
+  $itensAtuais = 40;
 }
 $itensTotais = Log_all($conexao);
   
@@ -53,7 +53,7 @@ $itensTotais = Log_all($conexao);
               <?php }?>
            </table>
             <div class="col-md-6">
-               <a class="btn btn-info form-control" href="acqualokos_log.php?itensAtuais=<?= $itensAtuais+3?>">Ver Mais</a>
+               <a class="btn btn-info form-control" href="acqualokos_log.php?itensAtuais=<?= $itensAtuais+40?>">Ver Mais</a>
             </div>
             <div class="col-md-6">
                <a class="btn btn-danger form-control" href="acqualokos_log.php?itensAtuais=<?= $itensTotais?>">Ver TUDO</a>
