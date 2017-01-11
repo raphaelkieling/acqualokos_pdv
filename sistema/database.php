@@ -1,15 +1,17 @@
 <?php 
-	#Config banco de dados	
-		//---HOSTINGER----
-		// nome Banco:u172364612_ pdv
-		// nome: u172364612_ acqua
-		// senha : admacqua
-//	$db = array(
-//		"local" => "localhost",
-//		"usuario" => "root",
-//		"senha"=> "",
-//		"banco"=>"acqualokos_revendedor"
-//	);
+#Config banco de dados	
+    //---HOSTINGER----
+    // nome Banco:u172364612_ pdv
+    // nome: u172364612_ acqua
+    // senha : admacqua
+
+
+  	// $db = array(
+  	// 	"local" => "localhost",
+  	// 	"usuario" => "root",
+  	// 	"senha"=> "",
+  	// 	"banco"=>"acqualokos_revendedor"
+  	// );
 	
 
 	 $db = array(
