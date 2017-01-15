@@ -23,9 +23,7 @@
 	</div>
 </nav> -->
 
-
-	<script src="js/jquery-3.1.1.js"></script>
-	<script>
+<!-- 	<script>
 		$('.muda').hover(
 			function(){
 				$(this).find('i').removeClass('fa-lock ').addClass(' fa-unlock-alt ');
@@ -34,4 +32,4 @@
 				$(this).find('i').removeClass('fa-unlock-alt ').addClass(' fa-lock ');
 			}
 		);
-	</script>
+	</script> -->

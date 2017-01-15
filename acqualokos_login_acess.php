@@ -13,10 +13,16 @@
 		<!-- BADGES notificação para os revendedores -->
 		<?php  $notificacao = NotificacaoAcqua($conexao); ?>
 		<div class="row">
-		    <div class="col-md-6">
-		     <form action="acqualokos_log.php">
-		        <button class="btn btn-warning btn-lg form-control">Log </button>
-		     </form>
+		    <div class="col-md-3">
+		        <div class="dropdown">
+				  <button id="dLabel" class="btn form-control btn-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Menu
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu form-control" aria-labelledby="dLabel">
+				    <li><a href="acqualokos_log.php">Log Sistema</a></li>
+				  </ul>
+				</div>
 		    </div>
 			<div class="col-md-2">
 				<button class="btn btn-default">Esperando <span class="badge"><?= $notificacao['esperando']?></span></button>
@@ -43,7 +49,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
-					<table class="table table-striped">
+					<table class="table table-striped" id="<?= $listas['status']?>">
 						<tr>
 							<th>Id:</th>
 							<th>Nome:</th>
@@ -75,7 +81,30 @@
 			</div>
 			<div class="panel-footer">
 				<button type="submit" class="btn btn-success btn-big form-controlado">Aceitar Lista</button>
-				<div onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger form-control">Cancelar</button></div>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-danger btn-big form-controlado" data-toggle="modal" data-target="#myModal">
+				  Cancelar
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Cancelamento da lista <?= $listas['id'] ?> - <?= $listas['p_venda']?></h4>
+				      </div>
+				      <div class="modal-body">
+				        Tem certeza que quer cancelar? Digite 'cancelar'.
+				        <input type="text" id="idCancel" class="form-control">
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				        <button type="button" onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger">Salvar Alteração</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
 			</div>	
 				</form>
 			</div> <!-- panel -->
@@ -89,14 +118,19 @@
 					}
 				?>
 		</div>
-	<script src="jquery-3.1.1.js"></script>
+
 	<script>
+		$(function () {
+			$('.dropdown-toggle').dropdown();
+		}); 
+
 		$(".aguardo").click(function(){
 			alert("Quando esta mensagem aparecer significa que o acqua lokos está verificando sua lista");
 		});
 		function btnCancela(numero){
 			var numeroLista = numero;
-			if(prompt("Digite APAGAR se quiser cancelar a lista "+numeroLista) == "APAGAR")
+			var idCancel    = $("#idCancel").val();
+			if(idCancel == "cancelar")
 			{
 				$.ajax({
 					type:'GET',
