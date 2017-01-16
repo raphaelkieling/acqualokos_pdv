@@ -268,8 +268,20 @@ function Log_add($conexao,$nome,$descricao,$data,$ip){
   }
   
 }
-function Log_view($conexao,$itensAtuais){
-  return mysqli_query($conexao,"select * from banco_log order by id desc limit $itensAtuais");
+function Log_view($conexao,$itensAtuais,$filtro){
+	if($filtro == 1)
+	{
+		return mysqli_query($conexao,"select * from banco_log order by id desc limit $itensAtuais");
+	}else if($filtro == 2){
+		return mysqli_query($conexao,"select * from banco_log where nome='Revendedor' order by id desc limit $itensAtuais");
+	}else if($filtro == 3){
+		return mysqli_query($conexao,"select * from banco_log where nome='AcquaLokos' order by id desc limit $itensAtuais");
+	}else if($filtro == 4){
+		return mysqli_query($conexao,"select * from banco_log where nome='PDV' order by id desc limit $itensAtuais");
+	}
+	else if($filtro == 5){
+		return mysqli_query($conexao,"select * from banco_log where nome='Bilheteria' order by id desc limit $itensAtuais");
+	}
 }
 function Log_all($conexao){
   $result = mysqli_query($conexao,"SELECT * FROM banco_log");

@@ -17,7 +17,6 @@
 		        <div class="dropdown">
 				  <button id="dLabel" class="btn form-control btn-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    Menu
-				    <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dLabel">
 				    <li class="dropdown-header">Sistemas</li>
@@ -26,6 +25,7 @@
 				    <li><a href="acesso_global.php">Bilheteria</a></li>
 				    <li class="dropdown-header">Administração</li>
 				    <li><a href="acqualokos_log.php">Log Sistema</a></li>
+				    <li><a href="admin_login.php">Admin</a></li>
 				  </ul>
 				</div>
 		    </div>
