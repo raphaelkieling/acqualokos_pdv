@@ -268,19 +268,19 @@ function Log_add($conexao,$nome,$descricao,$data,$ip){
   }
   
 }
-function Log_view($conexao,$itensAtuais,$filtro){
+function Log_view($conexao,$itensAtuais,$filtro,$descricao){
 	if($filtro == 1)
 	{
 		return mysqli_query($conexao,"select * from banco_log order by id desc limit $itensAtuais");
 	}else if($filtro == 2){
-		return mysqli_query($conexao,"select * from banco_log where nome='Revendedor' order by id desc limit $itensAtuais");
+		return mysqli_query($conexao,"select * from banco_log where nome='Revendedor' and descricao like '%$descricao%' order by id desc limit $itensAtuais");
 	}else if($filtro == 3){
-		return mysqli_query($conexao,"select * from banco_log where nome='AcquaLokos' order by id desc limit $itensAtuais");
+		return mysqli_query($conexao,"select * from banco_log where nome='AcquaLokos' and descricao like '%$descricao%' order by id desc limit $itensAtuais");
 	}else if($filtro == 4){
-		return mysqli_query($conexao,"select * from banco_log where nome='PDV' order by id desc limit $itensAtuais");
+		return mysqli_query($conexao,"select * from banco_log where nome='PDV' and descricao like '%$descricao%' order by id desc limit $itensAtuais");
 	}
 	else if($filtro == 5){
-		return mysqli_query($conexao,"select * from banco_log where nome='Bilheteria' order by id desc limit $itensAtuais");
+		return mysqli_query($conexao,"select * from banco_log where nome='Bilheteria' and descricao like '%$descricao%' order by id desc limit $itensAtuais");
 	}
 }
 function Log_all($conexao){
