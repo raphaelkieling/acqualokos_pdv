@@ -159,7 +159,12 @@ function addVeio($conexao,$id,$veio){
 		return false;
 	}
 }
-
+function modificaUserAcqua($conexao,$id,$nome,$documento){
+	mysqli_query($conexao,"UPDATE `banco_acqualokos` SET nome='$nome',documento='$documento' WHERE id=$id");
+}
+function modificaUserRevendedor($conexao,$id,$nome,$documento){
+	mysqli_query($conexao,"UPDATE `banco_revendedor` SET nome='$nome',documento='$documento' WHERE id=$id");
+}
 
 //LISTAS (que dividem as listas).
 function ListaUsada($conexao,$revendedor,$pontoVenda)

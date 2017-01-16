@@ -3,7 +3,7 @@
 
 	$id = $_POST['id'];
 	var_dump("<br>".$id);
-     $revendedor = $_POST['revendedor'];
+    $revendedor = $_POST['revendedor'];
 	var_dump("<br>".$revendedor);
 	$lista_id = $_POST['lista_id'];
 	var_dump("<br>".$lista_id);

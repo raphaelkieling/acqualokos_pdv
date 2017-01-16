@@ -56,9 +56,31 @@
 				</div>
 			</div>
 			<div class="panel-footer">
-			     <input type="text" name="revendedor" value="<?= $id_revendedor ?>" hidden>
+			    <input type="text" name="revendedor" value="<?= $id_revendedor ?>" hidden>
 				<button type="submit" class="btn btn-success btn-big form-controlado">Aceitar Lista</button>
-				<div onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger form-control">Cancelar</button></div>
+				<button type="button" class="btn btn-danger btn-big form-controlado" data-toggle="modal" data-target="#ModalCancelamento">
+				  Cancelar
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ModalCancelamento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Cancelamento da lista <?= $listas['id'] ?> - <?= $listas['p_venda']?></h4>
+				      </div>
+				      <div class="modal-body">
+				        Tem certeza que quer cancelar? Digite 'cancelar'.
+				        <input type="text" id="idCancel" class="form-control">
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				        <button type="button" onclick="btnCancela(<?= $listas['id'] ?>);" class="btn btn-danger">Salvar Alteração</button>
+				      </div>
+				    </div>
+				  </div>
+				</div><!-- Fim Modal -->
 			</div>	
 				</form>
 			</div> <!-- panel -->
@@ -73,13 +95,13 @@
 		</div>
 	<script src="jquery-3.1.1.js"></script>
 	<script>
-
 		$(".aguardo").click(function(){
-			alert("Quando esta imagem aparecer significa que o acqua lokos está verificando sua lista");
+			alert("Quando esta mensagem aparecer significa que o acqua lokos está verificando sua lista");
 		});
 		function btnCancela(numero){
 			var numeroLista = numero;
-			if(prompt("Digite APAGAR se quiser cancelar a lista "+numeroLista) == "APAGAR")
+			var idCancel    = $("#idCancel").val();
+			if(idCancel == "cancelar")
 			{
 				$.ajax({
 					type:'GET',
@@ -91,8 +113,28 @@
 						});
 					}
 				});
+			}else{
+				alert("Não esta correto");
 			}
 		}
+		function updateUser(id_user){
+			var nome = $("#nome_user"+id_user).val();
+			var documento = $("#documento_user"+id_user).val();
+
+			$.ajax({
+				type:"GET",
+				url:"sistema/modificar_user_revendedor.php",
+				data:{id:id_user,nome:nome,documento:documento},
+				success:function(data)
+				{
+					n = $("#nome"+id_user);
+					d = $("#documento"+id_user);
+
+					n.val(nome);
+					d.val(documento);
+					 $('#updateUser'+id_user).modal('toggle');
+				}
+			});
+		}
 	</script>
-</body>
 </html>

@@ -19,7 +19,12 @@
 				    Menu
 				    <span class="caret"></span>
 				  </button>
-				  <ul class="dropdown-menu form-control" aria-labelledby="dLabel">
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">
+				    <li class="dropdown-header">Sistemas</li>
+				    <li><a href="criar-lista.php">Criar Lista</a></li>
+				    <li><a href="revendedor_login.php">Revendedor</a></li>
+				    <li><a href="acesso_global.php">Bilheteria</a></li>
+				    <li class="dropdown-header">Administração</li>
 				    <li><a href="acqualokos_log.php">Log Sistema</a></li>
 				  </ul>
 				</div>
@@ -82,12 +87,12 @@
 			<div class="panel-footer">
 				<button type="submit" class="btn btn-success btn-big form-controlado">Aceitar Lista</button>
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-danger btn-big form-controlado" data-toggle="modal" data-target="#myModal">
+				<button type="button" class="btn btn-danger btn-big form-controlado" data-toggle="modal" data-target="#ModalCancelamento">
 				  Cancelar
 				</button>
 
 				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal fade" id="ModalCancelamento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -104,7 +109,7 @@
 				      </div>
 				    </div>
 				  </div>
-				</div>
+				</div><!-- Fim Modal -->
 			</div>	
 				</form>
 			</div> <!-- panel -->
@@ -142,7 +147,28 @@
 						});
 					}
 				});
+			}else{
+				alert("Não esta correto");
 			}
+		}
+		function updateUser(id_user){
+			var nome = $("#nome_user"+id_user).val();
+			var documento = $("#documento_user"+id_user).val();
+
+			$.ajax({
+				type:"GET",
+				url:"sistema/modificar_user_acqua.php",
+				data:{id:id_user,nome:nome,documento:documento},
+				success:function(data)
+				{
+					n = $("#nome"+id_user);
+					d = $("#documento"+id_user);
+
+					n.text(nome);
+					d.text(documento);
+					 $('#updateUser'+id_user).modal('toggle');
+				}
+			});
 		}
 	</script>
 </body>
