@@ -13,10 +13,10 @@
 		<!-- BADGES notificação para os revendedores -->
 		<?php  $notificacao = NotificacaoAcqua($conexao); ?>
 		<div class="row">
-		    <div class="col-md-3">
+		    <div class="col-md-1">
 		        <div class="dropdown">
-				  <button id="dLabel" class="btn form-control btn-info" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Menu
+				  <button id="dLabel" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <i class="glyphicon glyphicon-menu-hamburger"></i>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dLabel">
 				    <li class="dropdown-header">Sistemas</li>
@@ -24,8 +24,8 @@
 				    <li><a href="revendedor_login.php">Revendedor</a></li>
 				    <li><a href="acesso_global.php">Bilheteria</a></li>
 				    <li class="dropdown-header">Administração</li>
-				    <li><a href="acqualokos_log.php">Log Sistema</a></li>
-				    <li><a href="admin_login.php">Admin</a></li>
+				    <li><a href="acqualokos_log.php"><i class="glyphicon glyphicon-list-alt"></i>  Log Sistema</a></li>
+				    <li><a href="admin_login.php"><i class="glyphicon glyphicon-user"></i>  Admin</a></li>
 				  </ul>
 				</div>
 		    </div>
@@ -124,52 +124,6 @@
 				?>
 		</div>
 
-	<script>
-		$(function () {
-			$('.dropdown-toggle').dropdown();
-		}); 
-
-		$(".aguardo").click(function(){
-			alert("Quando esta mensagem aparecer significa que o acqua lokos está verificando sua lista");
-		});
-		function btnCancela(numero){
-			var numeroLista = numero;
-			var idCancel    = $("#idCancel").val();
-			if(idCancel == "cancelar")
-			{
-				$.ajax({
-					type:'GET',
-					url:'sistema/cancelaLista.php',
-					data:{lista:numeroLista},
-					success:function(retorno){
-						$('#'+numeroLista).animate({opacity:0.25},300,function(){
-							$(this).remove();
-						});
-					}
-				});
-			}else{
-				alert("Não esta correto");
-			}
-		}
-		function updateUser(id_user){
-			var nome = $("#nome_user"+id_user).val();
-			var documento = $("#documento_user"+id_user).val();
-
-			$.ajax({
-				type:"GET",
-				url:"sistema/modificar_user_acqua.php",
-				data:{id:id_user,nome:nome,documento:documento},
-				success:function(data)
-				{
-					n = $("#nome"+id_user);
-					d = $("#documento"+id_user);
-
-					n.text(nome);
-					d.text(documento);
-					 $('#updateUser'+id_user).modal('toggle');
-				}
-			});
-		}
-	</script>
+	<script src="js/acqualokos.js"></script>
 </body>
 </html>

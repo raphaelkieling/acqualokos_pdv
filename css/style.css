@@ -1,3 +1,6 @@
+body{
+	background:url(../img/seigaiha.png);
+}
 *{
 	box-sizing: border-box;
 	padding: 0px;
@@ -113,6 +116,15 @@ nav ul li i,nav ul li ul li i{
 	padding-top:5px;
 }
 /*Tabela*/
+.tabela-global,.panel{
+	background: white;
+}
+.addVeio{
+	width: 25px;
+	position: relative;
+	top:-10px;
+	height: auto;
+}
 .panel-heading{
 	background: #3498db !important;
 	color:white !important;
@@ -133,6 +145,7 @@ td img{
 /*Final tabela*/
 /*Login revendedor*/
 .login-acesso{
+	background: white;
 	float:none;
 	margin:0 auto;
 	margin-top: 50px;

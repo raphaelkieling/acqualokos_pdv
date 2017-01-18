@@ -1,5 +1,5 @@
 <?php 
-session_start();
+	session_start();
 	unset($_SESSION['acesso-total']);
 	unset($_SESSION['acesso']);
 	unset($_SESSION['acqua']);

@@ -13,13 +13,17 @@
 		<?php include("views/erro.php");?>
 		<br><br>
 		<h1 class="text-center">Revisão de Pontos de Venda para Confirmação</h1>
+		<input type="checkbox" id="checkCancel" onclick="esconderpanel(2);"> Esconder Cancelados
+		<br>
+		<input type="checkbox" id="checkConfirm" onclick="esconderpanel(1);"> Esconder Confirmados
+
 		<?php 
 			$contador_lista = 0;
 			$select_l = BuscaListaidRevendedor($conexao,$id_revendedor);
 			while($listas = mysqli_fetch_assoc($select_l)){
 				$contador_lista++;
 		?>
-		<div id="<?= $listas['id'] ?>" class="panel panel-default">
+		<div id="<?= $listas['id'] ?>" class="panel panel-default <?= $listas['status']?>">
 			<div class="panel-heading">
 				<h1 class="panel-title"><span class=" glyphicon glyphicon-list-alt text-left form-inline" arial-hidden="true"></span><center>Lista <?= $listas['id'] ?> - <?= $listas['revendedor'] ?> -  <?= $listas['p_venda'] ?></center></h1>
 			</div>
@@ -93,48 +97,5 @@
 					}
 				?>
 		</div>
-	<script src="jquery-3.1.1.js"></script>
-	<script>
-		$(".aguardo").click(function(){
-			alert("Quando esta mensagem aparecer significa que o acqua lokos está verificando sua lista");
-		});
-		function btnCancela(numero){
-			var numeroLista = numero;
-			var idCancel    = $("#idCancel").val();
-			if(idCancel == "cancelar")
-			{
-				$.ajax({
-					type:'GET',
-					url:'sistema/cancelaLista.php',
-					data:{lista:numeroLista},
-					success:function(retorno){
-						$('#'+numeroLista).animate({opacity:0.25},300,function(){
-							$(this).remove();
-						});
-					}
-				});
-			}else{
-				alert("Não esta correto");
-			}
-		}
-		function updateUser(id_user){
-			var nome = $("#nome_user"+id_user).val();
-			var documento = $("#documento_user"+id_user).val();
-
-			$.ajax({
-				type:"GET",
-				url:"sistema/modificar_user_revendedor.php",
-				data:{id:id_user,nome:nome,documento:documento},
-				success:function(data)
-				{
-					n = $("#nome"+id_user);
-					d = $("#documento"+id_user);
-
-					n.val(nome);
-					d.val(documento);
-					 $('#updateUser'+id_user).modal('toggle');
-				}
-			});
-		}
-	</script>
+	<script src="js/revendedor.js"></script>
 </html>

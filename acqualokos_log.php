@@ -4,12 +4,10 @@
 	include('views/head.php'); 
 
   if(isset($_GET['itensAtuais'])){$itensAtuais = $_GET['itensAtuais'];}else{ $itensAtuais = 40;}
+  if(isset($_GET['filtro'])){$filtro = $_GET['filtro'];}else{$filtro = 1;}
+  if(isset($_GET['descricao'])){$descricao = $_GET['descricao']; }else{ $descricao = "";}
 
   $itensTotais = Log_all($conexao);
-
-  if(isset($_GET['filtro'])){$filtro = $_GET['filtro'];}else{$filtro = 1;}
-
-  if(isset($_GET['descricao'])){$descricao = $_GET['descricao']; }else{ $descricao = "";}
 ?>
 <body>
 	<!-- Header -->
@@ -19,7 +17,7 @@
 	<center><h1>Log</h1></center>
       <div class="row">
         <div class="col-md-2">
-          <a class="btn btn-warning form-control" href="acqualokos_login_acess.php">Voltar</a>
+          <a class="btn btn-warning form-control" href="acqualokos_login_acess.php"><i class="glyphicon glyphicon-arrow-left"></i></a>
           <br><br>
           <form action="">
             <ul class="list-group">
@@ -29,16 +27,11 @@
               <li class="list-group-item"><input type="radio" name="filtro" value="4"> PDV</li>
               <li class="list-group-item"><input type="radio" name="filtro" value="5"> Bilheteria</li>
               <li class="list-group-item"><input type="text"  name="descricao" class="form-control" placeholder="Descrição avançada"></li>
-              <li class="list-group-item"><button class="btn btn-primary form-control">Filtrar</button></li>
+              <li class="list-group-item"><button class="btn btn-primary form-control"><i class="glyphicon glyphicon-filter"></i></button></li>
             </ul>
           </form>
         </div>
        <div class="col-md-10 panel panel-default">
-         <div class="panel-heading">
-           <h1 class="panel-title">
-             Log de ocorridos
-           </h1>
-         </div>
          <div class="panel-body">
            <table border="1">
               <tr>
@@ -61,11 +54,13 @@
                 </tr>
               <?php }?>
            </table>
-            <div class="col-md-6">
-               <a class="btn btn-info form-control" href="acqualokos_log.php?itensAtuais=<?= $itensAtuais+40?>&filtro=<?= $filtro?>">Ver Mais</a>
-            </div>
-            <div class="col-md-6">
-               <a class="btn btn-danger form-control" href="acqualokos_log.php?itensAtuais=<?= $itensTotais?>&filtro=<?= $filtro?>">Ver TUDO</a>
+            <div class="row">
+              <div class="col-md-2">
+                 <div class="btn-toolbar">
+                   <div class="btn-group btn-group-sm"><a class="btn btn-info " href="acqualokos_log.php?itensAtuais=<?= $itensAtuais+50?>&filtro=<?= $filtro?>">mais</a>
+                    <div class="btn-group btn-group-sm"><a class="btn btn-danger " href="acqualokos_log.php?itensAtuais=<?= $itensTotais?>&filtro=<?= $filtro?>">tudo</a></div></div>
+                 </div>
+              </div>
             </div>
          </div>
        </div>
