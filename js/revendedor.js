@@ -47,9 +47,9 @@ function updateUser(id_user){
 			n = $("#nome"+id_user);
 			d = $("#documento"+id_user);
 
-			n.val(nome);
-			d.val(documento);
-			 $('#updateUser'+id_user).modal('toggle');
+			n.text(nome);
+			d.text(documento);
+			$('#updateUser'+id_user).modal('toggle');
 		}
 	});
 }
