@@ -1,6 +1,6 @@
 	
 				<tr>
-					<td colspan="9"><center><div class="label label-warning">Aguardando Aprovação do Revendedor <?= $listas['status']  ?></div></center></td>
+					<td colspan="9"><center><div class="label label-warning">Aguardando Aprovação do Revendedor</div></center></td>
 				</tr>
 			</table>
 		</div> 

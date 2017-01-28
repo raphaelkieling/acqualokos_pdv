@@ -76,4 +76,5 @@ include('views/head.php')
 		<center style="margin-top:40px;"><small>Está com problemas? Ligue para (51) 9412-1300</small></center>
 		<br>
 	</div>
+	<?php include("views/footer.php"); ?>
 </body>

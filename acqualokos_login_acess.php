@@ -13,9 +13,9 @@
 		<!-- BADGES notificação para os revendedores -->
 		<?php  $notificacao = NotificacaoAcqua($conexao); ?>
 		<div class="row">
-		    <div class="col-md-1">
+		    <div class="col-md-1 col-sm-5">
 		        <div class="dropdown">
-				  <button id="dLabel" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <button id="dLabel" class="btn btn-primary form-control" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				   <i class="glyphicon glyphicon-menu-hamburger"></i>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dLabel">
@@ -30,13 +30,13 @@
 				</div>
 		    </div>
 			<div class="col-md-2">
-				<button class="btn btn-default">Esperando <span class="badge"><?= $notificacao['esperando']?></span></button>
+				<button class="btn btn-default form-control">Esperando <span class="badge"><?= $notificacao['esperando']?></span></button>
 			</div>
 			<div class="col-md-2">
-				<button class="btn btn-default">Aceitas <span class="badge"><?= $notificacao['aceita']?></span></span></button>			
+				<button class="btn btn-default form-control">Aceitas <span class="badge"><?= $notificacao['aceita']?></span></span></button>			
 			</div>
 			<div class="col-md-2">
-				<button class="btn btn-default">Canceladas <span class="badge"><?= $notificacao['cancelado']?></span></span></button>			
+				<button class="btn btn-default form-control">Canceladas <span class="badge"><?= $notificacao['cancelado']?></span></span></button>			
 			</div>
 		</div>
 		<br>
@@ -48,7 +48,7 @@
 				$contador_lista++;
 				if($listas['status'] == 0){
 		?>
-		<div id="<?= $listas['id']  ?>" class="panel panel-default">
+		<div id="<?= $listas['id']  ?>" class="panel panel-default <?= $listas['status']?>">
 			<div class="panel-heading">
 				<h1 class="panel-title"><span class=" glyphicon glyphicon-list-alt text-left form-inline" arial-hidden="true"></span><center>Lista <?= $listas['id'] ?> - <?= $listas['p_venda'] ?></center></h1>
 			</div>
