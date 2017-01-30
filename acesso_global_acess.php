@@ -67,4 +67,5 @@
 				}
 			}
 		</script>
+		<script src="js/j_chat.js"></script>
 	</div>

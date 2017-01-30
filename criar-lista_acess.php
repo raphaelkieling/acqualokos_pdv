@@ -69,5 +69,6 @@
 		<?php } ?>
 	</div>
 	<br>
+	<script src="js/j_chat.js"></script>
 </body>
 </html>

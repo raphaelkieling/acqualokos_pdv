@@ -98,4 +98,5 @@
 				?>
 		</div>
 	<script src="js/revendedor.js"></script>
+	<script src="js/j_chat.js"></script>
 </html>
