@@ -178,7 +178,20 @@ function ListaUsada($conexao,$revendedor,$pontoVenda)
 		return false;
 	}
 }
-
+function PegarIdUltimoListaRevendedor($conexao)
+{
+	//pega o ultimo id que foi usado na tabela banco_revendedor e coloca em uma variavel
+	$sql = "SELECT MAX(lista_id) FROM banco_revendedor";
+	if($select  = mysqli_query($conexao,$sql))
+	{
+		while($final = mysqli_fetch_assoc($select)){
+				return $final['MAX(lista_id)'];
+		}		
+	}else{
+		return false;
+	}
+	
+}
 function ListaStatusConfirmada($conexao,$id_lista)
 {
 	$sql = "UPDATE `banco_id_listas` set status=1 WHERE id=$id_lista";
@@ -217,6 +230,7 @@ function PegarIdUltimo($conexao)
 	}
 	
 }
+
 function PegarIdUltimoPrimeiro($conexao)
 {
 	//usa-se quando o id de lista está nula ou seja a tabela nao tem nenhum insert
@@ -244,6 +258,12 @@ function BuscaLista($conexao,$sessao_revendedor,$lista_id)
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão
 	return mysqli_query($conexao,"SELECT banco_revendedor.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_revendedor join banco_nomes_revendedor on banco_revendedor.revendedor = banco_nomes_revendedor.id where revendedor=$sessao_revendedor and lista_id=$lista_id");
+}
+function BuscaListaPDV($conexao,$lista_id)
+{
+	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
+	//Busca pela sessão
+	return mysqli_query($conexao,"SELECT banco_revendedor.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_revendedor join banco_nomes_revendedor on banco_revendedor.revendedor = banco_nomes_revendedor.id where lista_id=$lista_id");
 }
 //Sistema de INDEX
 function procurarDocumentoIndex($conexao,$documento)

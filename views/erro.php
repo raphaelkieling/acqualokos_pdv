@@ -31,9 +31,12 @@
 
 <?php
 	if(isset($_GET['erro-sucesso-ponto-venda'])){
+	$ultimo = PegarIdUltimoListaRevendedor($conexao);  
 ?>
 		<div class="aviso-sucesso form-controlado">
 			Lista encaminhada com sucesso. Aguarde aprovação de seu Revendedor antes de realizar o passeio!
+			<br>
+		<!-- 	<a href="sistema/verificar_lista_ponto_de_venda.php?nmr_lista=<?= $ultimo ?>" class="text-center"><h2>www.acqualokos.esy.es/sistema/verificar_lista_ponto_de_venda.php?nmr_lista=<?= $ultimo ?></h2></a> -->
 		</div>
 <?php
 	}
