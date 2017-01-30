@@ -25,12 +25,8 @@ include('views/head.php')
 				<h5>Leia atentamente antes de verificar</h5>
 				<div class="alert alert-info">
 					<p>
-						Coloque <b>CPF - RG</b>. Caso não tenha cadastrado um desses documentos não é possível fazer a verificação, pois apenas estes são números únicos. 
+						Coloque <b>CPF - RG - NOME</b> para verificar a disponibilidade do seu nome. Tenha certeza que o Ponto de Venda escreveu seu nome ou documento de maneira correta.
 					</p>
-					<p>
-						<b>NOMES NÃO</b> são verificados, pois podem ocorrer falhas ortográficas por parte do cadastrante.
-					</p>
-					<p><b>IMPORTANTE! </b>- Caso seu CPF ou RG conste no sistema, não quer dizer definitivamente que você pode entrar no parque e sim que o documento está cadastrado. Pode ocorrer no momento que o ponto de venda cadastre de forma errada o nome de outra pessoa e o seu documento. PASSE na bilheteria do mesmo jeito para poder entrar e confirmar seu cadastro.</p>
 				</div>
 				<form action="sistema/procurarDocumento.php">
 					<div class="row">
@@ -44,41 +40,36 @@ include('views/head.php')
 					</div>
 					<button class="btn btn-warning form-control">Verificar Disponibilidade</button>
 					<br> <br>
-					<?php 
-						if(isset($_GET['cadastrado']))
-						{
-							$cadastrado = $_GET['cadastrado'];
-						}else{
-							$cadastrado = 3;
-						}
-
-						if($cadastrado == 1)
-						{ 
-					?>
-						<div class="alert alert-success">
-							<center>A princípio você foi aceito! </center>
-							<br>
-							<p>
-								Mas lembre-se, que caso alguem tenha sido cadastrado com seu CPF ou RG aparecerá aqui. Tenha certeza que o ponto de venda lhe cadastrou corretamente para evitar transtornos.
-							</p>
-						</div>
-					<?php }else if($cadastrado == 0){ ?>
-						<div class="alert alert-danger">
-							<p>Desculpa, mas teu CPF ou RG não consta no sistema. :(</p>
-							<p>Aguarde a confirmação do Revendedor!</p>
-						</div>
-					<?php }else{?>
-							<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-					<?php } ?>
+					<div class="table-responsive">
+						<!-- <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> -->
+					</div>
 				</form>
 			</div>
 		</div>
 		<center style="margin-top:40px;"><small>Está com problemas? Ligue para (51) 9412-1300</small></center>
 		<br>
 	</div>
+	<script src="js/jquery-3.1.1.js"></script>
 	<script type='text/javascript'>
 		(function(){ var widget_id = 'Al8MOHZTRG';var d=document;var w=window;function l(){
 		var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+
+		$('#documento').keyup(function(){
+			var palavra = $('#documento').val();
+			$.ajax({
+				type: 'POST',
+				url:'sistema/procurarDocumento.php',
+				data:{palavra:palavra},
+				beforeSend:function()
+				{
+					$(".table-responsive").html("<i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i>");
+				},
+				success:function(data)
+				{
+					$(".table-responsive").html(data);
+				}
+			});
+		});
 	</script>
 	<?php include("views/footer.php"); ?>
 </body>

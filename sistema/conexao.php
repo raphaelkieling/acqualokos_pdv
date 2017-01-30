@@ -266,15 +266,13 @@ function BuscaListaPDV($conexao,$lista_id)
 	return mysqli_query($conexao,"SELECT banco_revendedor.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_revendedor join banco_nomes_revendedor on banco_revendedor.revendedor = banco_nomes_revendedor.id where lista_id=$lista_id");
 }
 //Sistema de INDEX
-function procurarDocumentoIndex($conexao,$documento)
+function procurarDocumentoIndex($conexao,$palavra)
 {
-	$select = mysqli_query($conexao,"select * from banco_global where documento=$documento");
-	if(mysqli_fetch_row($select) > 0)
-	{
-		return true;
-	}else{
-		return false;
-	}
+	return mysqli_query($conexao,"select * from banco_global where nome like '%$palavra%' or documento like '%$palavra%' ");
+}
+function cortaDocumento($documento)
+{
+	return substr($documento,0,4).'*****';
 }
 
 //LOG
