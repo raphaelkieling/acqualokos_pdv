@@ -3,8 +3,6 @@
 <head>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="img/favicon-32x32.png">
 	<!-- <link rel="stylesheet" href="css/style-compress.css"> -->
@@ -17,8 +15,10 @@
 	<script src="js/push.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
-
+ 	<meta name="robots" content="noindex, nofollow"> 
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta charset="UTF-8">
+	
 	<title>PDV - Listas</title>
 </head>
 <?php  include("sistema/conexao.php"); ?>
