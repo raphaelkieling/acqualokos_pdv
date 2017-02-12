@@ -1,4 +1,5 @@
-<?php  
+<?php
+	include('../sistema/verificar_login_admin.php');  
 	include("../conexao.php");
 
 	function ResetarBanco($conexao)

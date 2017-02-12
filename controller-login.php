@@ -1,6 +1,5 @@
 <?php
  	//LOGIN  do sistema, dou o md5 e depois comparo com a função logar se alguma daquelas senha são md5
-
 	session_start();
 	include("sistema/conexao.php");
 
@@ -21,10 +20,6 @@
 			//$id_revendedor = pegarRevendedor($conexao,$senha); Redundante por o $revendedor já traz o id
 			$_SESSION['acesso'] = $revendedor;
 
-			$file_log = fopen("sistema/admin/sistema.txt","a");
-			$escreve = fwrite($file_log,"LOGIN = Revendedor ". $revendedor ." se logou no dia  ". $data." às ".$hora." ip - ".$ip.PHP_EOL);
-			fclose($file_log);
-
 			header("location:revendedor_login_acess.php");
 		}else{
 			header("location:revendedor_login.php?erro-acesso");
@@ -36,10 +31,6 @@
 		if(logar($conexao,$acqualokos,2)){
 			header("location:acqualokos_login_acess.php");
 			$_SESSION['acqua'] = 2;
-
-			$file_log = fopen("sistema/admin/sistema.txt","a");
-			$escreve = fwrite($file_log,"LOGIN = Acqua Lokos se logou no dia  ". $data." às ".$hora." ip - ".$ip.PHP_EOL);
-			fclose($file_log);
 
 		}else{
 			header("location:acqualokos_login.php?erro-acesso");
@@ -63,9 +54,6 @@
 			header("location:acesso_global_acess.php");
 			$_SESSION['acesso-bilheteria'] = 4;
 
-			$file_log = fopen("sistema/admin/sistema.txt","a");
-			$escreve = fwrite($file_log,"LOGIN = Bilheteria se logou no dia  ". $data." às ".$hora.PHP_EOL);
-			fclose($file_log);
 		}else{
 			header("location:acesso_global.php?erro-acesso");
 		}
@@ -78,9 +66,6 @@
 			header("location:criar-lista_acess.php");
 			$_SESSION['acesso-lista'] = 5;
 
-			$file_log = fopen("sistema/admin/sistema.txt","a");
-			$escreve = fwrite($file_log,"LOGIN = PDV se logou no dia  ". $data." às ".$hora.PHP_EOL);
-			fclose($file_log);
 		}else{
 			header("location:criar-lista.php?erro-acesso");
 		}

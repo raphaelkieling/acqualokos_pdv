@@ -1,12 +1,13 @@
 <?php
 	// Evita que alguma pessoa entre no site;
-	include('views/head.php'); 
+	include('views/head.php');
 ?>
 <body>
 	<!-- Header -->
 	<?php include('views/header.php');?>
 	<div class="container main">
 		<?php include("views/erro.php");?>
+		<!-- <div class="alert alert-danger"><h1 class="text-center">EM MANUTENÇÃO</h1></div> -->
 		<center><h1>Criar Listagem de Funcionários</h1></center>
 		<div class="login-acesso col-md-5">
 			<img src="img/logo-lista2.png" alt="">
@@ -19,3 +20,4 @@
 	<br><br>
 	<script src="js/j_chat.js"></script>
 </body>
+ 

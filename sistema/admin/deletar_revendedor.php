@@ -1,5 +1,6 @@
 <?php  
 	//Deleta o banco de dados menos os logins
+	include('../sistema/verificar_login_admin.php');
 	include("conexao-admin.php");
 	$id = $_GET['idRevendedorDelete'];
 

@@ -1,5 +1,6 @@
 <?php  
 	//Modifica senha do revendedor
+	include('../sistema/verificar_login_admin.php');
 	include("conexao-admin.php");
 	
 	$id    = $_GET['idRevendedor'];

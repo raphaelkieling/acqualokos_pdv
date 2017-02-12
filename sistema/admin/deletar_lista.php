@@ -1,4 +1,5 @@
 <?php  
+	include('../sistema/verificar_login_admin.php');
 	include("conexao-admin.php");
 
 	$array_lista = $_GET['l'];

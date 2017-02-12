@@ -1,5 +1,6 @@
 <?php  
 	//Modifica a senha da Lista
+	include('../sistema/verificar_login_admin.php');
 	include("conexao-admin.php");
 	
 	$senha = $_GET['senhaLista'];

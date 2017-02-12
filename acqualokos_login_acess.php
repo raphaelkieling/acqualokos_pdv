@@ -125,6 +125,5 @@
 		</div>
 
 	<script src="js/acqualokos.js"></script>
-	<script src="js/j_chat.js"></script>
 </body>
 </html>

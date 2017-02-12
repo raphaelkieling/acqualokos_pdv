@@ -1,5 +1,6 @@
 <?php  
 	//Cadastra um revendedor
+	include('../sistema/verificar_login_admin.php');
 	include("conexao-admin.php");
 	
 	$nome  = $_GET['nome']; 

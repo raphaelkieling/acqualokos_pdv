@@ -3,13 +3,13 @@
  date_default_timezone_get('America/Sao_Paulo');
 
  $data = date("d.m.y");
- $hora = date("H:i:s"); 
+ $hora = date("H:i:s");
 
  //configuração geral
  include("database.php");
 
 //LOGAR
-function logar($conexao,$senha,$tipo){ 
+function logar($conexao,$senha,$tipo){
 	// Loga qualquer menos o revendedor pois o revendedor precisa de ID diferente
 	$sql = "SELECT * from banco_senhas where  senha='$senha' and tipo_entrada=$tipo";
 	if($select  = mysqli_query($conexao,$sql))
@@ -54,7 +54,7 @@ function confirmarListaRevendedor($conexao,$id,$lista_id,$i){ //confirma a lista
 	}else{
 		return false;
 	}
-	
+
 
 }
 function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$localidade,$responsavel,$revendedor,$data,$lista_id,$i){
@@ -67,7 +67,7 @@ function InserirListaRevendedor($conexao,$funcionarios,$documentos,$pontoVenda,$
 	$revendedor  = addslashes($revendedor);
 
 	$sql = "insert into banco_revendedor(nome,documento,ponto_venda,localidade,responsavel,revendedor,data,lista_id) values ('$funcionario','$documento','$pontoVenda','$localidade','$responsavel','$revendedor','$data','$lista_id')";
-	
+
 	$inserido = mysqli_query($conexao,$sql);
 	echo $sql;
 	if($inserido){
@@ -130,11 +130,11 @@ function confirmarListaAcqua($conexao,$id,$lista_id,$i){
 		$sqlDelete = "delete from banco_acqualokos where id=$id[$i]";
 		if(mysqli_query($conexao,$sqlDelete)){
 			return true;
-		}	
+		}
 	}else{
 		return false;
 	}
-	
+
 }
 
 
@@ -142,7 +142,7 @@ function confirmarListaAcqua($conexao,$id,$lista_id,$i){
 function BuscaListaGlobal($conexao){
 	//Busca a lista para colocar na parte de revendedores para que possa ser conferido os funcionarios que irão para o parque.
 	//Busca pela sessão.
-	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc limit 10";
+	$sql = "SELECT banco_global.*, banco_nomes_revendedor.id as idr,banco_nomes_revendedor.nome as nomer from banco_global join banco_nomes_revendedor on banco_global.revendedor = banco_nomes_revendedor.id ORDER BY banco_global.data desc limit 300";
 	return mysqli_query($conexao,$sql);
 
 }
@@ -186,11 +186,11 @@ function PegarIdUltimoListaRevendedor($conexao)
 	{
 		while($final = mysqli_fetch_assoc($select)){
 				return $final['MAX(lista_id)'];
-		}		
+		}
 	}else{
 		return false;
 	}
-	
+
 }
 function ListaStatusConfirmada($conexao,$id_lista)
 {
@@ -224,11 +224,11 @@ function PegarIdUltimo($conexao)
 	{
 		while($final = mysqli_fetch_assoc($select)){
 				return $final['MAX(id)']+1;
-		}		
+		}
 	}else{
 		return false;
 	}
-	
+
 }
 
 function PegarIdUltimoPrimeiro($conexao)
@@ -239,7 +239,7 @@ function PegarIdUltimoPrimeiro($conexao)
 	{
 		while($final = mysqli_fetch_assoc($select)){
 			return $final['MAX(id)'];
-		}		
+		}
 	}else{
 		return false;
 	}
@@ -268,7 +268,7 @@ function BuscaListaPDV($conexao,$lista_id)
 //Sistema de INDEX
 function procurarDocumentoIndex($conexao,$palavra)
 {
-	return mysqli_query($conexao,"select * from banco_global where nome like '%$palavra%' or documento like '%$palavra%' ");
+	return mysqli_query($conexao,"select * from banco_global where nome like '%$palavra%' or documento like '%$palavra%' limit 100 ");
 }
 function cortaDocumento($documento)
 {
@@ -284,7 +284,7 @@ function Log_add($conexao,$nome,$descricao,$data,$ip){
   }else{
     return false;
   }
-  
+
 }
 function Log_view($conexao,$itensAtuais,$filtro,$descricao){
 	if($filtro == 1)
@@ -303,7 +303,7 @@ function Log_view($conexao,$itensAtuais,$filtro,$descricao){
 }
 function Log_all($conexao){
   $result = mysqli_query($conexao,"SELECT * FROM banco_log");
-  $num_rows = mysqli_num_rows($result); 
+  $num_rows = mysqli_num_rows($result);
   return $num_rows;
 }
 ?>
